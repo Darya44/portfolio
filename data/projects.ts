@@ -30,10 +30,13 @@ export const projects: Project[] = [
   tags: ["KV System"],
   shortDescription: "Разработка Key visual бренда",
   coverImage: "/notion/kv-winline/1920_1080_5_(1).png",
-
-  problem: "Клиенты жаловались на сложный onboarding и перегруженный интерфейс.",
-  approach: "Пересобрала визуальную систему и упростила композицию.",
-  outcome: "Обновлённая система используется в digital и соцсетях."
+  problem: "…",
+  approach: "…",
+  outcome: "…",
+  tools: ["Figma"],
+  links: [],
+  featured: true,
+  order: 1,
 },
   {
     slug: 'aurora-ecommerce-growth',
