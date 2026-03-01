@@ -26,7 +26,7 @@ export const projects: Project[] = [
 {
   title: "KV Winline",
   slug: "kv-winline",
-  year: "2024",
+  year: 2024,
   tags: ["KV System"],
   shortDescription: "Разработка Key visual бренда",
   coverImage: "/notion/kv-winline/1920_1080_5_(1).png",
