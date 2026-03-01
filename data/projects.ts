@@ -23,20 +23,15 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  {
-    slug: 'nova-banking-redesign',
-    title: 'Nova Banking Redesign',
-    client: 'Nova Bank',
-    year: 2024,
-    role: ['Product Designer', 'UX Researcher'],
-    tags: ['Fintech', 'Mobile App', 'Design System'],
-    shortDescription: 'Редизайн мобильного банка с фокусом на скорость основных операций.',
-    coverImage:
-      'https://images.unsplash.com/photo-1556741533-f6acd647d2fb?auto=format&fit=crop&w=1600&q=80',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1600&q=80'
-    ],
+ {
+  title: "KV Winline",
+  slug: "kv-winline",
+  year: "2024",
+  tags: ["KV System"],
+  shortDescription: "Разработка Key visual бренда",
+  coverImage: "/notion/kv-winline
+/1920_1080_5_(1).png"
+}
     problem:
       'Клиенты жаловались на сложный onboarding и перегруженный интерфейс в ежедневных сценариях.',
     approach:
