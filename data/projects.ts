@@ -23,28 +23,18 @@ export type Project = {
 };
 
 export const projects: Project[] = [
- {
+{
   title: "KV Winline",
   slug: "kv-winline",
   year: "2024",
   tags: ["KV System"],
   shortDescription: "Разработка Key visual бренда",
-  coverImage: "/notion/kv-winline
-/1920_1080_5_(1).png"
-}
-    problem:
-      'Клиенты жаловались на сложный onboarding и перегруженный интерфейс в ежедневных сценариях.',
-    approach:
-      'Провели 18 интервью, перестроили IA и создали модульную дизайн-систему для 3 продуктовых команд.',
-    outcome: 'Время перевода сократилось на 37%, NPS вырос на 14 пунктов за первый квартал.',
-    tools: ['Figma', 'Maze', 'Notion', 'Jira'],
-    links: [
-      { label: 'Case PDF', url: 'https://example.com/nova-case' },
-      { label: 'Prototype', url: 'https://example.com/nova-prototype' }
-    ],
-    featured: true,
-    order: 1
-  },
+  coverImage: "/notion/kv-winline/1920_1080_5_(1).png",
+
+  problem: "Клиенты жаловались на сложный onboarding и перегруженный интерфейс.",
+  approach: "Пересобрала визуальную систему и упростила композицию.",
+  outcome: "Обновлённая система используется в digital и соцсетях."
+},
   {
     slug: 'aurora-ecommerce-growth',
     title: 'Aurora eCommerce Growth',
