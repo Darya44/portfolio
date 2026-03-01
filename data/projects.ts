@@ -24,20 +24,30 @@ export type Project = {
 
 export const projects = [
 {
+  slug: "kv-winline",
   title: "KV Winline",
   client: "Winline",
-  slug: "kv-winline",
   year: 2024,
-  tags: ["KV System"],
-  shortDescription: "Разработка Key visual бренда",
+  role: ["Creative concept", "Key Visual", "Art direction"],
+  tags: ["KV System", "Campaign", "Brand"],
+
+  shortDescription: "Разработка key visual и системы адаптаций для бренда.",
   coverImage: "/notion/kv-winline/1920_1080_5_(1).png",
-  problem: "...",
-  approach: "...",
-  outcome: "...",
-  tools: ["Figma"],
+
+  galleryImages: [
+    "/notion/kv-winline/16_9_(1).jpg",
+    "/notion/kv-winline/1920_1080_(1).png",
+    "/notion/kv-winline/КВ_10.pngg"
+  ],
+
+  problem: "Нужно было создать заметный key visual и единые правила адаптации под разные форматы для коммуникации бренда.",
+  approach: "Собрала визуальный язык (форма, композиция, типографика), заложила вариативность и подготовила набор адаптаций под носители.",
+  outcome: "Получилась KV-система, которую можно быстро масштабировать под digital-форматы и кампании.",
+
+  tools: ["Figma", "Photoshop", "Ai"],
   links: [],
   featured: true,
-  order: 1,
+  order: 1
 },
   {
     slug: 'aurora-ecommerce-growth',
