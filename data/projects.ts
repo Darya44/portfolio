@@ -22,7 +22,7 @@ export type Project = {
   order: number;
 };
 
-export const projects: Project[] = [
+export const projects = [
 {
   title: "KV Winline",
   slug: "kv-winline",
