@@ -19,9 +19,9 @@ export default function HomePage() {
 
     {/* ПРАВАЯ КОЛОНКА: ограничиваем ширину, чтобы строки были короче */}
     <div className="w-full max-w-xl">
-      <h1 className="text-5xl md:text-6xl font-bold mb-7 text-white">
-        Дарья Захарьящева
-      </h1>
+     <h1 className="font-display text-5xl md:text-6xl font-bold mb-7 text-white">
+  Дарья Захарьящева
+</h1>
 
       {/* меньше расстояние между абзацами */}
       <div className="space-y-3 text-lg leading-relaxed text-white">
