@@ -26,7 +26,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru" className={`${manrope.variable} ${dela.variable}`}>
+    <html
+      lang="ru"
+      className={`${manrope.variable} ${dela.variable}`}
+    >
       <body className="font-sans bg-black text-white">
         <header className="mb-12 flex flex-col gap-4 border-b border-white/10 pb-6 sm:flex-row sm:items-center sm:justify-between">
           <Link href="/" className="text-xl font-semibold tracking-tight">
