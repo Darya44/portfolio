@@ -6,39 +6,44 @@ export default function HomePage() {
   return (
     <div className="space-y-16">
       {/* HERO */}
-      <section className="max-w-6xl mx-auto px-6 pt-28 pb-20">
-        <div className="flex flex-col md:flex-row items-start gap-16">
-          <img
-            src="/images/ава-нью.png"
-            alt="Дарья Захарьящева"
-            className="w-72 h-72 rounded-3xl object-cover"
-          />
+    <section className="max-w-6xl mx-auto px-6 pt-28 pb-20">
+  <div className="flex flex-col md:flex-row items-start gap-14">
+    {/* ЛЕВАЯ КОЛОНКА: фото по ширине контейнера */}
+    <div className="w-full md:w-[420px]">
+      <img
+        src="/images/ава-нью.png"
+        alt="Дарья Захарьящева"
+        className="w-full aspect-square rounded-3xl object-cover"
+      />
+    </div>
 
-          <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-6xl font-bold mb-8 text-white">
-              Дарья Захарьящева
-            </h1>
+    {/* ПРАВАЯ КОЛОНКА: ограничиваем ширину, чтобы строки были короче */}
+    <div className="w-full max-w-xl">
+      <h1 className="text-5xl md:text-6xl font-bold mb-7 text-white">
+        Дарья Захарьящева
+      </h1>
 
-            <div className="space-y-6 text-lg leading-relaxed text-white">
-              <p>
-                Я работаю креативным дизайнером в агентстве «Цех» и создаю визуальные
-                концепции для Сбера, Яндекса, VK, Winline, Самолета, Балтики и других брендов.
-              </p>
+      {/* меньше расстояние между абзацами */}
+      <div className="space-y-3 text-lg leading-relaxed text-white">
+        <p>
+          Я работаю креативным дизайнером в агентстве «Цех» и&nbsp;создаю визуальные
+          концепции для&nbsp;Сбера, Яндекса, VK, Winline, Самолета, Балтики и&nbsp;других
+          брендов.
+        </p>
 
-              <p>
-                Работаю на стыке графического и digital-дизайна, интегрирую AI-инструменты
-                в креативные процессы и обучаю этому коллег.
-              </p>
+        <p>
+          Работаю на&nbsp;стыке графического и&nbsp;digital-дизайна, интегрирую AI-инструменты
+          в&nbsp;креативные процессы и&nbsp;обучаю этому коллег.
+        </p>
 
-              <p>
-                Сильная сторона — создание сочных рекламных имиджей: от концепции
-                до финального продакшена.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
+        <p>
+          Сильная сторона — создание сочных рекламных имиджей:
+          от&nbsp;концепции до&nbsp;финального продакшена.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
       {/* FEATURED PROJECTS */}
       <section className="space-y-6">
         <div className="flex items-end justify-between">
