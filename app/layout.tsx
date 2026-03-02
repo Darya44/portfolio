@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { Dela_Gothic_One, Manrope } from "next/font/google";
 
@@ -20,16 +21,9 @@ export const metadata: Metadata = {
   description: "App Router portfolio template with case studies",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html
-      lang="ru"
-      className={`${manrope.variable} ${dela.variable}`}
-    >
+    <html lang="ru" className={`${manrope.variable} ${dela.variable}`}>
       <body className="font-sans bg-black text-white">
         <header className="mb-12 flex flex-col gap-4 border-b border-white/10 pb-6 sm:flex-row sm:items-center sm:justify-between">
           <Link href="/" className="text-xl font-semibold tracking-tight">
