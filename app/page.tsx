@@ -2,51 +2,42 @@ import Link from 'next/link';
 import { ProjectCard } from '@/components/project-card';
 import { featuredProjects } from '@/data/projects';
 
-export default function HomePage() {
-  return (
-    <div className="space-y-16">
-      {/* HERO */}
-      <section className="max-w-5xl mx-auto px-6 pt-24 pb-16">
-        <div className="flex flex-col md:flex-row items-start gap-10">
-          <img
-            src="/images/ава-нью.png"
-            alt="Дарья Захарьящева"
-            className="w-44 h-44 rounded-2xl object-cover"
-          />
+<section className="max-w-6xl mx-auto px-6 pt-28 pb-20">
+  <div className="flex flex-col md:flex-row items-start gap-16">
 
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Дарья Захарьящева
-            </h1>
+    {/* Фото */}
+    <img
+      src="/images/ава-нью.png"
+      alt="Дарья Захарьящева"
+      className="w-72 h-72 rounded-3xl object-cover"
+    />
 
-            <div className="space-y-4 text-lg leading-relaxed text-neutral-700">
-              <p>
-                Я работаю креативным дизайнером в агентстве «Цех» и создаю визуальные
-                концепции для Сбера, Яндекса, VK, Winline, Самолета, Балтики и других брендов.
-              </p>
+    {/* Текст */}
+    <div className="max-w-2xl">
+      <h1 className="text-5xl md:text-6xl font-bold mb-8 text-white">
+        Дарья Захарьящева
+      </h1>
 
-              <p>
-                Работаю на стыке графического и digital-дизайна, интегрирую AI-инструменты
-                в креативные процессы и обучаю этому коллег.
-              </p>
+      <div className="space-y-6 text-lg leading-relaxed text-white">
+        <p>
+          Я работаю креативным дизайнером в агентстве «Цех» и создаю визуальные
+          концепции для Сбера, Яндекса, VK, Winline, Самолета, Балтики и других брендов.
+        </p>
 
-              <p>
-                Сильная сторона — создание сочных рекламных имиджей: от концепции
-                до финального продакшена.
-              </p>
-            </div>
+        <p>
+          Работаю на стыке графического и digital-дизайна, интегрирую AI-инструменты
+          в креативные процессы и обучаю этому коллег.
+        </p>
 
-            <div className="mt-8 flex items-center gap-4">
-              <Link
-                href="/work"
-                className="rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-white/90"
-              >
-                Смотреть все кейсы
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+        <p>
+          Сильная сторона — создание сочных рекламных имиджей:
+          от концепции до финального продакшена.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
       {/* FEATURED PROJECTS */}
       <section className="space-y-6">
