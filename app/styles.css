@@ -1,3 +1,2 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* TEMP TEST */
+html, body { margin: 0; padding: 0; }
