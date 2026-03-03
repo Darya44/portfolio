@@ -17,21 +17,29 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio Studio",
-  description: "App Router portfolio template with case studies",
+  title: "Дарья Захарьящева — Portfolio",
+  description: "Creative / digital designer portfolio",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ru" className={`${manrope.variable} ${dela.variable}`}>
       <body className="font-sans bg-black text-white">
-        <header className="mb-12 flex flex-col gap-4 border-b border-white/10 pb-6 sm:flex-row sm:items-center sm:justify-between">
-          <Link href="/" className="text-xl font-semibold tracking-tight">
-            Portfolio Studio
-          </Link>
+        <header className="mx-auto mb-12 max-w-6xl px-6 pt-8">
+          <div className="flex items-center justify-between border-b border-white/10 pb-6">
+            <Link href="/" className="text-xl font-semibold tracking-tight">
+              Portfolio
+            </Link>
+
+            <nav className="flex gap-6 text-sm text-white/70">
+              <Link href="/work" className="hover:text-white">
+                Кейсы
+              </Link>
+            </nav>
+          </div>
         </header>
 
-        {children}
+        <main className="mx-auto max-w-6xl px-6 pb-24">{children}</main>
       </body>
     </html>
   );
