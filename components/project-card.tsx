@@ -1,52 +1,39 @@
-'use client';
+import Link from "next/link";
+import type { Project } from "@/data/projects";
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import type { Project } from '@/data/projects';
-
-type ProjectCardProps = {
-  project: Project;
-};
-
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project }: { project: Project }) {
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.45, ease: 'easeOut' }}
-      className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+    <Link
+      href={`/work/${project.slug}`}
+      className="group block overflow-hidden rounded-3xl border border-white/10 bg-white/5 hover:bg-white/10 transition"
     >
-      <Link href={`/work/${project.slug}`} className="block">
-        <div className="relative h-56 w-full overflow-hidden">
-          <Image
-            src={project.coverImage}
-            alt={project.title}
-            fill
-            className="object-cover transition duration-500 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
+      <div className="aspect-[16/10] w-full overflow-hidden">
+        <img
+          src={project.coverImage}
+          alt={project.title}
+          className="h-full w-full object-cover group-hover:scale-[1.02] transition"
+        />
+      </div>
+
+      <div className="p-5">
+        <div className="flex items-center justify-between gap-4">
+          <h3 className="text-lg font-semibold">{project.title}</h3>
+          <span className="text-xs text-white/60">{project.year}</span>
         </div>
-        <div className="space-y-3 p-5">
-          <div className="flex items-center justify-between text-xs uppercase tracking-wide text-white/60">
-            <span>{project.client}</span>
-            <span>{project.year}</span>
-          </div>
-          <h3 className="text-xl font-semibold">{project.title}</h3>
-          <p className="text-sm text-white/75">{project.shortDescription}</p>
-          <div className="flex flex-wrap gap-2 pt-1">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-white/20 px-3 py-1 text-xs text-white/70"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+
+        <p className="mt-2 text-sm text-white/70">{project.shortDescription}</p>
+
+        <div className="mt-3 flex flex-wrap gap-2">
+          {project.tags.slice(0, 4).map((t) => (
+            <span
+              key={t}
+              className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-white/70"
+            >
+              {t}
+            </span>
+          ))}
         </div>
-      </Link>
-    </motion.article>
+      </div>
+    </Link>
   );
 }
