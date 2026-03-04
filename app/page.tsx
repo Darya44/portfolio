@@ -1,57 +1,58 @@
-import Link from 'next/link';
-import { ProjectCard } from '@/components/project-card';
-import { featuredProjects } from '@/data/projects';
+import { ProjectCard } from "@/components/project-card";
+import { featuredProjects } from "@/data/projects";
 
 export default function HomePage() {
   return (
     <div className="space-y-16">
       {/* HERO */}
-    <section className="max-w-6xl mx-auto px-6 pt-28 pb-20">
-  <div className="flex flex-col md:flex-row items-start gap-14">
-    {/* ЛЕВАЯ КОЛОНКА: фото по ширине контейнера */}
-    <div className="w-full md:w-[420px]">
-      <img
-        src="/images/ава-нью.png"
-        alt="Дарья Захарьящева"
-        className="w-full aspect-square rounded-3xl object-cover"
-      />
-    </div>
+      <section className="pt-6">
+        <div className="flex flex-col md:flex-row items-start gap-14">
+          {/* Фото */}
+          <div className="w-full md:w-[520px]">
+            <img
+              src="/images/ава-нью.png"
+              alt="Дарья Захарьящева"
+              className="w-full aspect-square rounded-[40px] object-cover"
+            />
+          </div>
 
-    {/* ПРАВАЯ КОЛОНКА: ограничиваем ширину, чтобы строки были короче */}
-    <div className="w-full max-w-xl">
-     <h1 className="font-display text-5xl md:text-6xl font-bold mb-7 text-white">
-  Дарья Захарьящева
-</h1>
+          {/* Текст */}
+          <div className="w-full md:pt-2">
+            <h1 className="font-display text-5xl md:text-7xl font-bold leading-[0.95]">
+              Дарья
+              <br />
+              Захарьящева
+            </h1>
 
-      {/* меньше расстояние между абзацами */}
-      <div className="space-y-3 text-lg leading-relaxed text-white">
-        <p>
-          Я работаю креативным дизайнером в агентстве «Цех» и&nbsp;создаю визуальные
-          концепции для&nbsp;Сбера, Яндекса, VK, Winline, Самолета, Балтики и&nbsp;других
-          брендов.
-        </p>
+            <div className="mt-8 max-w-[44ch] space-y-2 text-lg leading-relaxed text-white">
+              <p>
+                Я работаю креативным дизайнером в агентстве «Цех» и&nbsp;создаю
+                визуальные концепции для&nbsp;Сбера, Яндекса, VK, Winline,
+                Самолёта, Балтики и&nbsp;других брендов.
+              </p>
 
-        <p>
-          Работаю на&nbsp;стыке графического и&nbsp;digital-дизайна, интегрирую AI-инструменты
-          в&nbsp;креативные процессы и&nbsp;обучаю этому коллег.
-        </p>
+              <p>
+                Работаю на&nbsp;стыке графического и&nbsp;digital-дизайна,
+                интегрирую AI-инструменты в&nbsp;креативные процессы
+                и&nbsp;обучаю этому коллег.
+              </p>
 
-        <p>
-          Сильная сторона — создание сочных рекламных имиджей:
-          от&nbsp;концепции до&nbsp;финального продакшена.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+              <p>
+                Сильная сторона — сочные рекламные имиджи: от&nbsp;концепции
+                до&nbsp;финального продакшена.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FEATURED PROJECTS */}
       <section className="space-y-6">
         <div className="flex items-end justify-between">
-          <h2 className="text-2xl font-semibold text-white">Избранные проекты</h2>
-
-          <Link href="/work" className="text-sm text-white/70 hover:text-white">
+          <h2 className="text-2xl font-semibold">Избранные проекты</h2>
+          <a href="/work" className="text-sm text-white/70 hover:text-white">
             Все проекты →
-          </Link>
+          </a>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
