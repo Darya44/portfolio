@@ -7,12 +7,11 @@ const config: Config = {
     './data/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
-   extend: {
-  fontFamily: {
-    sans: ["var(--font-manrope)"],
-    display: ["var(--font-dela)"],
-  },
-}
+    extend: {
+      fontFamily: {
+        sans: ['Manrope', 'sans-serif'],
+        display: ['"Dela Gothic One"', 'sans-serif']
+      }
     }
   },
   plugins: []
