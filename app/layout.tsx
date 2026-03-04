@@ -1,6 +1,5 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import Link from "next/link";
 import { Dela_Gothic_One, Manrope } from "next/font/google";
 
@@ -17,21 +16,25 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Дарья Захарьящева — Portfolio",
-  description: "Creative / digital designer portfolio",
+  title: "Portfolio",
+  description: "Darya portfolio",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="ru" className={`${manrope.variable} ${dela.variable}`}>
-      <body className="font-sans bg-black text-white">
-        <header className="mx-auto mb-12 max-w-6xl px-6 pt-8">
-          <div className="flex items-center justify-between border-b border-white/10 pb-6">
+      <body className="min-h-screen bg-black text-white font-sans">
+        <header className="border-b border-white/10">
+          <div className="mx-auto max-w-6xl px-6 py-6 flex items-center justify-between">
             <Link href="/" className="text-xl font-semibold tracking-tight">
               Portfolio
             </Link>
 
-            <nav className="flex gap-6 text-sm text-white/70">
+            <nav className="flex items-center gap-6 text-sm text-white/70">
               <Link href="/work" className="hover:text-white">
                 Кейсы
               </Link>
@@ -39,7 +42,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
         </header>
 
-        <main className="mx-auto max-w-6xl px-6 pb-24">{children}</main>
+        <main className="mx-auto max-w-6xl px-6 py-12">{children}</main>
       </body>
     </html>
   );
