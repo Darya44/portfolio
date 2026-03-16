@@ -34,7 +34,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         left={
           isWinlineCase ? (
             <div className="space-y-5 font-sans text-white/85">
-              <h1 className="font-display font-bold text-[48px] leading-tight text-white whitespace-pre-line">
+              <h1 className="font-display font-bold text-[48px] text-white whitespace-pre-line" style={{ lineHeight: '0.9' }}>
                 {'Winline —\nkey visual'}
               </h1>
               <p>
