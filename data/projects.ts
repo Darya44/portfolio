@@ -3,6 +3,11 @@ export type ProjectLink = {
   url: string;
 };
 
+export type ProjectSection = {
+  title: string;
+  images: string[];
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -12,7 +17,7 @@ export type Project = {
   tags: string[];
   shortDescription: string;
   coverImage: string;
-  galleryImages: string[];
+  sections: ProjectSection[];
   problem: string;
   approach: string;
   outcome: string;
@@ -34,15 +39,30 @@ export const projects = [
   shortDescription: "Разработка key visual и системы адаптаций для бренда.",
   coverImage: "/notion/kv-winline/1920_1080_5_(1).png",
 
-  galleryImages: [
-    "/notion/kv-winline/2.png",
-  "/notion/kv-winline/16_9_(1).jpg",
-  "/notion/kv-winline/1920_1080_(1).png",
-  "/notion/kv-winline/1920_1080_5_(1).png",
-  "/notion/kv-winline/juxtapose-gif.gif",
-  "/notion/kv-winline/nachalo.png",
-  "/notion/kv-winline/prognozy.png",
-  "/notion/kv-winline/KV_10.png"
+  sections: [
+    {
+      title: "Сбор референсов",
+      images: ["/notion/kv-winline/nachalo.png"]
+    },
+    {
+      title: "Скетчи",
+      images: ["/notion/kv-winline/16_9_(1).jpg"]
+    },
+    {
+      title: "Проработка сцены",
+      images: [
+        "/notion/kv-winline/1920_1080_(1).png",
+        "/notion/kv-winline/1920_1080_5_(1).png"
+      ]
+    },
+    {
+      title: "Финальный KV",
+      images: ["/notion/kv-winline/KV_10.png"]
+    },
+    {
+      title: "Анимация",
+      images: ["/notion/kv-winline/juxtapose-gif.gif"]
+    }
   ],
 
   problem: "Нужно было создать заметный key visual и единые правила адаптации под разные форматы для коммуникации бренда.",
@@ -64,9 +84,14 @@ export const projects = [
     shortDescription: 'Оптимизация каталога и checkout-потока для роста конверсии.',
     coverImage:
       'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1600&q=80',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1600&q=80'
+    sections: [
+      {
+        title: 'Gallery',
+        images: [
+          'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80',
+          'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1600&q=80'
+        ]
+      }
     ],
     problem: 'Высокий bounce rate в категории одежды и брошенные корзины на шаге доставки.',
     approach:
@@ -87,9 +112,14 @@ export const projects = [
     shortDescription: 'Платформа для обучения с трекингом прогресса и личным наставничеством.',
     coverImage:
       'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80'
+    sections: [
+      {
+        title: 'Gallery',
+        images: [
+          'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80',
+          'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80'
+        ]
+      }
     ],
     problem: 'Студенты теряли мотивацию из-за отсутствия прозрачных целей и обратной связи.',
     approach: 'Добавили roadmap, weekly check-ins и визуальные сигналы прогресса в личном кабинете.',
@@ -109,9 +139,14 @@ export const projects = [
     shortDescription: 'Новый аналитический dashboard для enterprise-клиентов.',
     coverImage:
       'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1600&q=80',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1551281044-8d8d7f8ea59f?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80'
+    sections: [
+      {
+        title: 'Gallery',
+        images: [
+          'https://images.unsplash.com/photo-1551281044-8d8d7f8ea59f?auto=format&fit=crop&w=1600&q=80',
+          'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80'
+        ]
+      }
     ],
     problem: 'Пользователи тратили много времени на формирование регулярных отчетов.',
     approach: 'Спроектировали сохранённые представления, drag-n-drop виджеты и шаблоны отчетов.',
@@ -131,9 +166,14 @@ export const projects = [
     shortDescription: 'Лендинг для запуска новой линейки smart-одежды.',
     coverImage:
       'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1600&q=80',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=1600&q=80'
+    sections: [
+      {
+        title: 'Gallery',
+        images: [
+          'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&q=80',
+          'https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=1600&q=80'
+        ]
+      }
     ],
     problem: 'Бренд выходил в новый сегмент и нуждался в быстром digital-позиционировании.',
     approach: 'Собрали storytelling-структуру, motion-блоки и интеграцию с CRM для лидов.',
@@ -153,9 +193,14 @@ export const projects = [
     shortDescription: 'Приложение для записи к врачам и мониторинга лечения.',
     coverImage:
       'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80'
+    sections: [
+      {
+        title: 'Gallery',
+        images: [
+          'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1600&q=80',
+          'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80'
+        ]
+      }
     ],
     problem: 'Пациенты пропускали приём из-за сложной навигации и слабых напоминаний.',
     approach: 'Переработали пользовательские сценарии, добавили персонализированные уведомления.',
@@ -175,9 +220,14 @@ export const projects = [
     shortDescription: 'Портал для управления поставками и SLA в реальном времени.',
     coverImage:
       'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1600&q=80',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80'
+    sections: [
+      {
+        title: 'Gallery',
+        images: [
+          'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1600&q=80',
+          'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80'
+        ]
+      }
     ],
     problem: 'Диспетчеры переключались между 4 системами для одной операционной задачи.',
     approach: 'Провели service blueprint, объединили трекинг, алерты и отчеты в едином интерфейсе.',
@@ -197,9 +247,14 @@ export const projects = [
     shortDescription: 'Интерактивный digital-гид для музыкального фестиваля.',
     coverImage:
       'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=80',
-    galleryImages: [
-      'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80'
+    sections: [
+      {
+        title: 'Gallery',
+        images: [
+          'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80',
+          'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80'
+        ]
+      }
     ],
     problem: 'Посетители не успевали ориентироваться в расписании и активностях фестиваля.',
     approach: 'Создали персонализированное расписание, push-навигацию и карту сцен.',

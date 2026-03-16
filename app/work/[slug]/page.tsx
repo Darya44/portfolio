@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { CaseGrid, CaseImage, CaseLayout } from '@/components/case-layout';
+import { CaseLayout } from '@/components/case-layout';
 import { getProjectBySlug, sortedProjects } from '@/data/projects';
 
 type ProjectPageProps = {
@@ -19,10 +19,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
-  const processImages = [project.coverImage, ...project.galleryImages];
-  const twoColumnImages = processImages.slice(1, 3);
-  const threeColumnImages = processImages.slice(3, 6);
-  const remainingImages = processImages.slice(6);
+  const displayedSections = isWinlineCase
+    ? project.sections
+    : [{ title: 'Overview', images: [project.coverImage] }, ...project.sections];
 
   return (
     <article className="space-y-10">
@@ -87,29 +86,65 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           )
         }
         right={
-          <>
-            <CaseImage src={processImages[0]} alt={`${project.title} process image 1`} priority />
+          isWinlineCase ? (
+            <div className="space-y-16">
+              <section className="space-y-6">
+                <img src="/notion/kv-winline/nachalo.png" alt="Winline process start references" className="w-full h-auto rounded-2xl" loading="lazy" />
+                <img src="/notion/kv-winline/juxtapose-gif.gif" alt="Winline animation process" className="w-full h-auto rounded-2xl" loading="lazy" />
+                <div className="space-y-4">
+                  <img src="/notion/kv-winline/2.png" alt="Winline process frame" className="w-full h-auto rounded-2xl" loading="lazy" />
+                  <p className="ml-auto max-w-[560px] text-sm leading-relaxed text-white/65">
+                    Основная константа всех макетов для Winline это шрифт, цвета и фишка фрибета. Фрибет присутствует на большинстве макетов и является самой запоминающейся деталью фирменного стиля бренда букмекера.
+                  </p>
+                </div>
+              </section>
 
-            {twoColumnImages.length > 0 && (
-              <CaseGrid columns={2}>
-                {twoColumnImages.map((image, index) => (
-                  <CaseImage key={image} src={image} alt={`${project.title} process image ${index + 2}`} />
-                ))}
-              </CaseGrid>
-            )}
+              <section className="space-y-6">
+                <h2 className="text-xl font-semibold text-white">Моя коллекция KV Winline</h2>
 
-            {threeColumnImages.length > 0 && (
-              <CaseGrid columns={3}>
-                {threeColumnImages.map((image, index) => (
-                  <CaseImage key={image} src={image} alt={`${project.title} process image ${index + 4}`} />
-                ))}
-              </CaseGrid>
-            )}
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <img src="/notion/kv-winline/16_9_(1).jpg" alt="Winline KV collection image 1" className="w-full h-auto rounded-2xl" loading="lazy" />
+                  <img src="/notion/kv-winline/1920_1080_(1).png" alt="Winline KV collection image 2" className="w-full h-auto rounded-2xl" loading="lazy" />
+                </div>
 
-            {remainingImages.map((image, index) => (
-              <CaseImage key={image} src={image} alt={`${project.title} process image ${index + 7}`} />
-            ))}
-          </>
+                <img src="/notion/kv-winline/1920_1080_5_(1).png" alt="Winline KV collection full width image" className="w-full h-auto rounded-2xl" loading="lazy" />
+
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <img src="/notion/kv-winline/prognozy.png" alt="Winline KV collection image 3" className="w-full h-auto rounded-2xl" loading="lazy" />
+                  <img src="/notion/kv-winline/KV_10.png" alt="Winline KV collection image 4" className="w-full h-auto rounded-2xl" loading="lazy" />
+                </div>
+              </section>
+            </div>
+          ) : (
+            <>
+              {displayedSections.map((section) => (
+                <section key={section.title} className="space-y-4">
+                  <h2 className="text-xl font-semibold text-white">{section.title}</h2>
+
+                  {section.images.length === 1 ? (
+                    <img
+                      src={section.images[0]}
+                      alt={`${project.title} - ${section.title}`}
+                      className="w-full h-auto rounded-2xl"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                      {section.images.map((image, index) => (
+                        <img
+                          key={`${section.title}-${index}`}
+                          src={image}
+                          alt={`${project.title} - ${section.title} ${index + 1}`}
+                          className="w-full h-auto rounded-2xl"
+                          loading="lazy"
+                        />
+                      ))}
+                    </div>
+                  )}
+                </section>
+              ))}
+            </>
+          )
         }
       />
     </article>
