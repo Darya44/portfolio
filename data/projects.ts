@@ -36,7 +36,7 @@ export const projects = [
   role: ["Creative concept", "Key Visual", "Art direction"],
   tags: ["KV System", "Campaign", "Brand"],
 
-  shortDescription: "Разработка key visual и системы адаптаций для бренда.",
+  shortDescription: "Разработка key visual для бренда Winline.",
   coverImage: "/notion/kv-winline/1920_1080_5_(1).png",
 
   sections: [
@@ -69,7 +69,7 @@ export const projects = [
   approach: "Собрала визуальный язык (форма, композиция, типографика), заложила вариативность и подготовила набор адаптаций под носители.",
   outcome: "Получилась KV-система, которую можно быстро масштабировать под digital-форматы и кампании.",
 
-  tools: ["Figma", "Photoshop", "Ai"],
+  tools: ["Figma", "Photoshop", "Krea Ai"],
   links: [],
   featured: true,
   order: 1
