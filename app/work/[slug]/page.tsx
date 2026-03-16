@@ -38,9 +38,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 {'Winline —\nkey visual'}
               </h1>
               <p>
-                Для букмекера Winline я разработала серию рекламных key
+                Для букмекера Winline я разработала серию
                 <br />
-                visual.
+                рекламных key visual.
               </p>
               <p>
                 Процесс работы начинается со сбора референсов и быстрых скетчей, которые помогают найти
@@ -49,7 +49,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 типографика.
               </p>
               <p>
-                Справа показан процесс разработки — от первых идей до финального визуала.
+                Справа показан процесс разработки — от первых идей до финального визуала.
               </p>
             </div>
           ) : (
