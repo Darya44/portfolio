@@ -6,31 +6,33 @@ export default function HomePage() {
     <div className="space-y-16">
       {/* HERO */}
       <section className="pt-6">
-        <div className="flex flex-col-reverse md:flex-row items-start gap-14">
-          {/* Р¤РѕС‚Рѕ */}
+        <div className="flex flex-col-reverse items-start gap-14 md:flex-row">
+          {/* Фото */}
           <div className="w-full max-w-[44ch]">
             <img
-              src="/images/Р°РІР°-РЅСЊСЋ.png"
-              alt="Р”Р°СЂСЊСЏ Р—Р°С…Р°СЂСЊСЏС‰РµРІР°"
-              className="w-full aspect-square rounded-[40px] object-cover"
+              src="/images/ава-нью.png"
+              alt="Дарья Захарьящева"
+              className="aspect-square w-full rounded-[40px] object-cover"
             />
           </div>
 
-          {/* РўРµРєСЃС‚ */}
+          {/* Текст */}
           <div className="w-full md:pt-2">
-            <h1 className="font-display text-5xl md:text-7xl font-bold leading-[0.95]">
-              Р”Р°СЂСЊСЏ
+            <h1 className="font-display text-5xl font-bold leading-[0.95] md:text-7xl">
+              Дарья
               <br />
-              Р—Р°С…Р°СЂСЊСЏС‰РµРІР°
+              Захарьящева
             </h1>
 
             <div className="mt-8 max-w-[44ch] space-y-2 text-lg leading-relaxed text-white">
               <p>
-                РЇ СЂР°Р±РѕС‚Р°СЋ РєСЂРµР°С‚РёРІРЅС‹Рј РґРёР·Р°Р№РЅРµСЂРѕРј РІ Р°РіРµРЅС‚СЃС‚РІРµ В«Р¦РµС…В» Рё&nbsp;СЃРѕР·РґР°СЋ РІРёР·СѓР°Р»СЊРЅС‹Рµ РєРѕРЅС†РµРїС†РёРё РґР»СЏ&nbsp;РЎР±РµСЂР°, РЇРЅРґРµРєСЃР°, VK, Winline, РЎР°РјРѕР»С‘С‚Р°, Р‘Р°Р»С‚РёРєРё Рё&nbsp;РґСЂСѓРіРёС… Р±СЂРµРЅРґРѕРІ.
+                Я работаю креативным дизайнером в агентстве «Цех» и создаю визуальные концепции для Сбера,
+                Яндекса, VK, Winline, Самолёта, Балтики и других брендов.
               </p>
 
               <p>
-                Р Р°Р±РѕС‚Р°СЋ РЅР°&nbsp;СЃС‚С‹РєРµ РіСЂР°С„РёС‡РµСЃРєРѕРіРѕ Рё&nbsp;digital-РґРёР·Р°Р№РЅР°, РёРЅС‚РµРіСЂРёСЂСѓСЋ AI-РёРЅСЃС‚СЂСѓРјРµРЅС‚С‹ РІ&nbsp;РєСЂРµР°С‚РёРІРЅС‹Рµ РїСЂРѕС†РµСЃСЃС‹ Рё&nbsp;РѕР±СѓС‡Р°СЋ СЌС‚РѕРјСѓ РєРѕР»Р»РµРі.
+                Работаю на стыке графического и digital-дизайна, интегрирую AI-инструменты в креативные процессы
+                и обучаю этому коллег.
               </p>
             </div>
           </div>
@@ -40,9 +42,9 @@ export default function HomePage() {
       {/* FEATURED PROJECTS */}
       <section className="space-y-6">
         <div className="flex items-end justify-between">
-          <h2 className="text-2xl font-semibold">РР·Р±СЂР°РЅРЅС‹Рµ РїСЂРѕРµРєС‚С‹</h2>
+          <h2 className="text-2xl font-semibold">Избранные проекты</h2>
           <a href="/work" className="text-sm text-white/70 hover:text-white">
-            Р’СЃРµ РїСЂРѕРµРєС‚С‹ в†’
+            Все проекты {'->'}
           </a>
         </div>
 
@@ -60,7 +62,7 @@ export default function HomePage() {
           </a>
         </div>
 
-        <div className="w-screen border-t border-neutral-700 my-24 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]" />
+        <div className="relative left-1/2 right-1/2 my-24 w-screen -ml-[50vw] -mr-[50vw] border-t border-neutral-700" />
 
         <div className="grid grid-cols-1 gap-8 text-3xl leading-tight md:grid-cols-[1.4fr_1fr_1fr]">
           <div className="space-y-2">
@@ -94,4 +96,3 @@ export default function HomePage() {
     </div>
   );
 }
-
