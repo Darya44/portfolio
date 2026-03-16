@@ -22,6 +22,46 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const displayedSections = isWinlineCase
     ? project.sections
     : [{ title: 'Overview', images: [project.coverImage] }, ...project.sections];
+  const currentIndex = sortedProjects.findIndex((item) => item.slug === project.slug);
+  const nextProject = sortedProjects[(currentIndex + 1) % sortedProjects.length];
+  const caseFooter = (
+    <section className="space-y-10 pt-8">
+      <div className="flex justify-end">
+        <Link href={`/work/${nextProject.slug}`} className="text-4xl font-medium leading-none text-white hover:text-white/80">
+          next {'->'}
+        </Link>
+      </div>
+
+      <div className="relative left-1/2 right-1/2 my-12 w-screen -ml-[50vw] -mr-[50vw] border-t border-neutral-700" />
+
+      <div className="grid grid-cols-1 gap-8 text-2xl leading-tight md:grid-cols-[1.4fr_1fr_1fr] md:text-3xl">
+        <div className="space-y-2">
+          <p className="text-base text-white/60 md:text-lg">Email:</p>
+          <a href="mailto:zakharyashchevad@bk.ru" className="block hover:text-white/80">
+            zakharyashchevad@bk.ru
+          </a>
+          <p className="pt-2 text-base text-white/60 md:text-lg">Phone:</p>
+          <a href="tel:+79521265853" className="block hover:text-white/80">
+            +7 (952) 126 58 53
+          </a>
+        </div>
+
+        <div className="space-y-2">
+          <p className="text-base text-white/60 md:text-lg">Telegram profile:</p>
+          <a href="https://t.me/i_young_designer" target="_blank" rel="noreferrer" className="block hover:text-white/80">
+            @i_young_designer
+          </a>
+        </div>
+
+        <div className="space-y-2">
+          <p className="text-base text-white/60 md:text-lg">Telegram channel:</p>
+          <a href="https://t.me/dashadesgn" target="_blank" rel="noreferrer" className="block hover:text-white/80">
+            @dashadesgn
+          </a>
+        </div>
+      </div>
+    </section>
+  );
 
   return (
     <article className="space-y-10">
@@ -111,6 +151,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                   <img src="/notion/kv-winline/KV_10.png" alt="Winline KV collection image 4" className="w-full h-auto rounded-2xl" loading="lazy" />
                 </div>
               </section>
+
+              {caseFooter}
             </div>
           ) : (
             <>
@@ -140,6 +182,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                   )}
                 </section>
               ))}
+
+              {caseFooter}
             </>
           )
         }
