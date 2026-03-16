@@ -25,13 +25,13 @@ export type Project = {
 export const projects = [
 {
   slug: "kv-winline",
-  title: "KV Winline",
+  title: "Winline — key visual",
   client: "Winline",
   year: 2024,
   role: ["Creative concept", "Key Visual", "Art direction"],
   tags: ["KV System", "Campaign", "Brand"],
 
-  shortDescription: "Разработка key visual и системы адаптаций для бренда.",
+  shortDescription: "Для букмекера Winline я разработала серию рекламных key visual.",
   coverImage: "/notion/kv-winline/1920_1080_5_(1).png",
 
   galleryImages: [
@@ -40,9 +40,9 @@ export const projects = [
     "/notion/kv-winline/КВ_10.pngg"
   ],
 
-  problem: "Нужно было создать заметный key visual и единые правила адаптации под разные форматы для коммуникации бренда.",
-  approach: "Собрала визуальный язык (форма, композиция, типографика), заложила вариативность и подготовила набор адаптаций под носители.",
-  outcome: "Получилась KV-система, которую можно быстро масштабировать под digital-форматы и кампании.",
+  problem: "Процесс работы начинается со сбора референсов и быстрых скетчей, которые помогают найти композицию и основной визуальный приём.",
+  approach: "Далее формируется сцена и создаётся ключевой образ — в 3D или с использованием AI-инструментов. После этого прорабатываются детали композиции и типографика.",
+  outcome: "Справа показан процесс разработки — от первых идей до финального визуала.",
 
   tools: ["Figma", "Photoshop", "Ai"],
   links: [],
