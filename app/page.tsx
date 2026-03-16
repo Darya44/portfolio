@@ -6,9 +6,9 @@ export default function HomePage() {
     <div className="space-y-16">
       {/* HERO */}
       <section className="pt-6">
-        <div className="flex flex-col md:flex-row items-start gap-14">
+        <div className="flex flex-col-reverse md:flex-row items-start gap-14">
           {/* Фото */}
-          <div className="w-full md:w-[520px]">
+          <div className="w-full max-w-[44ch]">
             <img
               src="/images/ава-нью.png"
               alt="Дарья Захарьящева"
@@ -26,20 +26,11 @@ export default function HomePage() {
 
             <div className="mt-8 max-w-[44ch] space-y-2 text-lg leading-relaxed text-white">
               <p>
-                Я работаю креативным дизайнером в агентстве «Цех» и&nbsp;создаю
-                визуальные концепции для&nbsp;Сбера, Яндекса, VK, Winline,
-                Самолёта, Балтики и&nbsp;других брендов.
+                Я работаю креативным дизайнером в агентстве «Цех» и&nbsp;создаю визуальные концепции для&nbsp;Сбера, Яндекса, VK, Winline, Самолёта, Балтики и&nbsp;других брендов.
               </p>
 
               <p>
-                Работаю на&nbsp;стыке графического и&nbsp;digital-дизайна,
-                интегрирую AI-инструменты в&nbsp;креативные процессы
-                и&nbsp;обучаю этому коллег.
-              </p>
-
-              <p>
-                Сильная сторона — сочные рекламные имиджи: от&nbsp;концепции
-                до&nbsp;финального продакшена.
+                Работаю на&nbsp;стыке графического и&nbsp;digital-дизайна, интегрирую AI-инструменты в&nbsp;креативные процессы и&nbsp;обучаю этому коллег.
               </p>
             </div>
           </div>
