@@ -93,9 +93,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 <img src="/notion/kv-winline/juxtapose-gif.gif" alt="Winline animation process" className="w-full h-auto rounded-2xl" loading="lazy" />
                 <div className="space-y-4">
                   <img src="/notion/kv-winline/2.png" alt="Winline process frame" className="w-full h-auto rounded-2xl" loading="lazy" />
-                  <p className="mt-6 max-w-[520px] text-left text-neutral-300 leading-relaxed">
-                    Основная константа всех макетов для Winline это шрифт, цвета и фишка фрибета. Фрибет присутствует на большинстве макетов и является самой запоминающейся деталью фирменного стиля бренда букмекера.
-                  </p>
                 </div>
               </section>
 
