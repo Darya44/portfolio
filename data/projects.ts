@@ -39,10 +39,10 @@ export const projects = [
   "/notion/kv-winline/16_9_(1).jpg",
   "/notion/kv-winline/1920_1080_(1).png",
   "/notion/kv-winline/1920_1080_5_(1).png",
-  "/notion/kv-winline/KB_10.png",
-  "/notion/kv-winline/начало1.png",
-  "/notion/kv-winline/прогнозы.png",
-  "/notion/kv-winline/juxtapose-gif.gif"
+  "/notion/kv-winline/juxtapose-gif.gif",
+  "/notion/kv-winline/nachalo.png",
+  "/notion/kv-winline/prognozy.png",
+  "/notion/kv-winline/KV_10.png"
   ],
 
   problem: "Нужно было создать заметный key visual и единые правила адаптации под разные форматы для коммуникации бренда.",
