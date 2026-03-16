@@ -34,7 +34,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         left={
           isWinlineCase ? (
             <div className="space-y-5 font-sans text-white/85">
-              <h1 className="font-display font-bold text-[48px] leading-[0.85] text-white whitespace-pre-line">
+              <h1 className="font-display font-bold text-[48px] leading-[0.95] text-white whitespace-pre-line">
                 {'Winline —\nkey visual'}
               </h1>
               <p>
@@ -43,9 +43,11 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 рекламных key visual.
               </p>
               <p>
-                Процесс работы начинается со сбора референсов и быстрых скетчей, которые помогают найти
+                Процесс работы начинается со сбора референсов
+                и быстрых скетчей, которые помогают найти
                 композицию и основной визуальный приём. Далее формируется сцена и создаётся ключевой образ —
-                в 3D или с использованием AI-инструментов. После этого прорабатываются детали композиции и
+                в
+                3D или с использованием AI-инструментов. После этого прорабатываются детали композиции и
                 типографика.
               </p>
               <p>
