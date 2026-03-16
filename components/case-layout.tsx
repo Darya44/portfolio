@@ -19,7 +19,7 @@ type CaseGridProps = {
 
 export function CaseLayout({ left, right }: CaseLayoutProps) {
   return (
-    <section className="mx-auto grid w-full max-w-[1200px] grid-cols-1 gap-10 md:grid-cols-[320px_minmax(0,1fr)] md:gap-12 xl:grid-cols-[420px_minmax(0,1fr)]">
+    <section className="mx-auto grid w-full max-w-[1600px] grid-cols-1 gap-10 md:grid-cols-[420px_minmax(0,1fr)]">
       <aside className="space-y-6 md:sticky md:top-[120px] md:self-start">{left}</aside>
       <div className="space-y-12">{right}</div>
     </section>

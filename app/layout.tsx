@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="ru">
       <body className="min-h-screen bg-black text-white font-sans">
         <header className="border-b border-white/10">
-          <div className="mx-auto max-w-6xl px-6 py-6 flex items-center justify-between">
+          <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-6">
             <Link href="/" className="text-xl font-semibold tracking-tight">
               Portfolio
             </Link>
@@ -29,7 +29,7 @@ export default function RootLayout({
           </div>
         </header>
 
-        <main className="mx-auto max-w-6xl px-6 py-12">{children}</main>
+        <main className="mx-auto max-w-[1600px] px-6 py-12">{children}</main>
       </body>
     </html>
   );

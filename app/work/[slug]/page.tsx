@@ -32,7 +32,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       <CaseLayout
         left={
           isWinlineCase ? (
-            <div className="space-y-5 font-sans text-white/85">
+            <div className="space-y-5 font-sans text-white/85 [&>p]:max-w-[380px] [&>p]:text-white/70">
               <h1 className="font-display font-bold text-[48px] text-white whitespace-pre-line" style={{ lineHeight: '0.9' }}>
                 {'Winline —\nkey visual'}
               </h1>
@@ -56,7 +56,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 <h1 className="font-display text-4xl leading-[0.95] sm:text-5xl">{project.title}</h1>
               </div>
 
-              <div className="space-y-2 font-sans text-white/80">
+              <div className="max-w-[380px] space-y-2 font-sans text-white/75">
                 <p>
                   <span className="text-white/50">Client:</span> {project.client}
                 </p>
@@ -68,17 +68,17 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 </p>
               </div>
 
-              <div className="space-y-2 font-sans text-white/80">
+              <div className="max-w-[380px] space-y-2 font-sans text-white/75">
                 <p className="text-sm uppercase tracking-[0.2em] text-white/50">Role</p>
                 <p>{project.role.join(', ')}</p>
               </div>
 
-              <div className="space-y-2 font-sans text-white/80">
+              <div className="max-w-[380px] space-y-2 font-sans text-white/75">
                 <p className="text-sm uppercase tracking-[0.2em] text-white/50">Tools</p>
                 <p>{project.tools.join(', ')}</p>
               </div>
 
-              <div className="space-y-2 font-sans text-white/80">
+              <div className="max-w-[380px] space-y-2 font-sans text-white/75">
                 <p className="text-sm uppercase tracking-[0.2em] text-white/50">Description</p>
                 <p>{project.shortDescription}</p>
               </div>
@@ -93,7 +93,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 <img src="/notion/kv-winline/juxtapose-gif.gif" alt="Winline animation process" className="w-full h-auto rounded-2xl" loading="lazy" />
                 <div className="space-y-4">
                   <img src="/notion/kv-winline/2.png" alt="Winline process frame" className="w-full h-auto rounded-2xl" loading="lazy" />
-                  <p className="ml-auto max-w-[560px] text-sm leading-relaxed text-white/65">
+                  <p className="ml-auto max-w-[380px] text-sm leading-relaxed text-white/65">
                     Основная константа всех макетов для Winline это шрифт, цвета и фишка фрибета. Фрибет присутствует на большинстве макетов и является самой запоминающейся деталью фирменного стиля бренда букмекера.
                   </p>
                 </div>
