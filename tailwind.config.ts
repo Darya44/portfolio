@@ -1,21 +1,20 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './data/**/*.{js,ts,jsx,tsx,mdx}'
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./data/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-   extend: {
-  fontFamily: {
-    sans: ["var(--font-manrope)"],
-    display: ["var(--font-dela)"],
+    extend: {
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Arial", "Helvetica", "sans-serif"],
+      },
+    },
   },
-}
-    }
-  },
-  plugins: []
+  plugins: [],
 };
 
 export default config;
