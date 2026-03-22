@@ -182,30 +182,26 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   );
 
   const renderLootboxesRight = () => (
-    <div className="space-y-16">
-      <section className="space-y-6">
-        <img src="/notion/Lootboxes/lootboxes-cover.png" alt="Lootboxes Winline cover" className="w-full h-auto rounded-2xl" loading="lazy" />
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
-            <source src="/notion/Lootboxes/wnl_blue_1080x1080_v002-original.mp4" type="video/mp4" />
-          </video>
-          <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
-            <source src="/notion/Lootboxes/wnl_purple_1080x1080_v002-original.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </section>
+    <div className="space-y-6">
+      <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
+        <source src="/notion/Lootboxes/_OVERTIME_1024x1024-original.mp4" type="video/mp4" />
+      </video>
 
-      <section className="space-y-6">
-        <h2 className="text-xl font-semibold text-white">Моя коллекция лутбоксов Winline</h2>
+      <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
+        <source src="/notion/Lootboxes/original.mp4" type="video/mp4" />
+      </video>
 
-        <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
-          <source src="/notion/Lootboxes/_OVERTIME_1024x1024-original.mp4" type="video/mp4" />
-        </video>
+      <img src="/notion/Lootboxes/Nachaloo1.png" alt="Lootboxes Winline Nachaloo1" className="w-full h-auto rounded-2xl" loading="lazy" />
+      <img src="/notion/Lootboxes/Nachaloo2.png" alt="Lootboxes Winline Nachaloo2" className="w-full h-auto rounded-2xl" loading="lazy" />
+      <img src="/notion/Lootboxes/Nachalo3.png" alt="Lootboxes Winline Nachalo3" className="w-full h-auto rounded-2xl" loading="lazy" />
 
-        <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
-          <source src="/notion/Lootboxes/original.mp4" type="video/mp4" />
-        </video>
-      </section>
+      <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
+        <source src="/notion/Lootboxes/wnl_blue_1080x1080_v002-original.mp4" type="video/mp4" />
+      </video>
+
+      <img src="/notion/Lootboxes/Vsu_lineika.png" alt="Lootboxes Winline Vsu lineika" className="w-full h-auto rounded-2xl" loading="lazy" />
+      <img src="/notion/Lootboxes/Area_51.png" alt="Lootboxes Winline Area 51" className="w-full h-auto rounded-2xl" loading="lazy" />
+      <img src="/notion/Lootboxes/Overtime.png" alt="Lootboxes Winline Overtime" className="w-full h-auto rounded-2xl" loading="lazy" />
     </div>
   );
 
