@@ -75,7 +75,7 @@ export const projects = [
   order: 1
 },
   {
-    slug: 'Лутбоксы Winline',
+    slug: 'lootboxes-winline',
     title: 'Лутбоксы Winline',
     client: 'Winline',
     year: 2024,
@@ -270,5 +270,23 @@ export const sortedProjects = [...projects].sort((a, b) => a.order - b.order);
 
 export const featuredProjects = sortedProjects.filter((project) => project.featured);
 
-export const getProjectBySlug = (slug: string) =>
-  sortedProjects.find((project) => project.slug === slug);
+const legacySlugMap: Record<string, string> = {
+  'Лутбоксы Winline': 'lootboxes-winline'
+};
+
+const normalizeSlug = (value: string) => {
+  const safeDecoded = (() => {
+    try {
+      return decodeURIComponent(value);
+    } catch {
+      return value;
+    }
+  })();
+
+  return legacySlugMap[safeDecoded] ?? safeDecoded;
+};
+
+export const getProjectBySlug = (slug: string) => {
+  const normalizedSlug = normalizeSlug(slug);
+  return sortedProjects.find((project) => normalizeSlug(project.slug) === normalizedSlug);
+};

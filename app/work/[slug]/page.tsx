@@ -11,8 +11,15 @@ export function generateStaticParams() {
   return sortedProjects.map((project) => ({ slug: project.slug }));
 }
 export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = getProjectBySlug(params.slug);
-  const isWinlineCase = params.slug === 'kv-winline';
+  const decodedSlug = (() => {
+    try {
+      return decodeURIComponent(params.slug);
+    } catch {
+      return params.slug;
+    }
+  })();
+  const project = getProjectBySlug(decodedSlug);
+  const isWinlineCase = decodedSlug === 'kv-winline';
 
   if (!project) {
     notFound();
