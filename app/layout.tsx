@@ -22,23 +22,24 @@ export default function RootLayout({
     <html lang="ru">
       <body className={`${inter.variable} min-h-screen bg-black text-white font-sans`}>
         <header className="border-b border-white/10">
-          <div className="mx-auto grid max-w-[1600px] grid-cols-4 items-center px-6 py-6 text-sm">
-            <Link href="/" className="justify-self-start whitespace-nowrap hover:text-white/80">
-              Захарьящева Дарья
+          <div className="mx-auto grid max-w-[1600px] grid-cols-4 items-center px-3 py-3 text-[11px] sm:px-6 sm:py-6 sm:text-sm">
+            <Link href="/" className="justify-self-start leading-[1.05] hover:text-white/80">
+              <span className="block sm:inline">Захарьящева</span>
+              <span className="block sm:ml-1 sm:inline">Дарья</span>
             </Link>
 
             <nav className="col-span-3 grid grid-cols-3 items-center text-white/80">
-              <Link href="/work" className="justify-self-center hover:text-white">
+              <Link href="/work" className="justify-self-center whitespace-nowrap hover:text-white">
                 CV
               </Link>
-              <Link href="/#about" className="justify-self-center hover:text-white">
+              <Link href="/#about" className="justify-self-center whitespace-nowrap hover:text-white">
                 Обо мне
               </Link>
               <a
                 href="https://t.me/i_young_designer"
                 target="_blank"
                 rel="noreferrer"
-                className="justify-self-end hover:text-white"
+                className="justify-self-end whitespace-nowrap hover:text-white"
               >
                 Telegram
               </a>
