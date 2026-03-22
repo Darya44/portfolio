@@ -24,16 +24,16 @@ export default function RootLayout({
         <header className="border-b border-white/10">
           <div className="mx-auto grid max-w-[1600px] grid-cols-[auto_1fr] items-center px-3 py-3 text-[13px] sm:grid-cols-4 sm:px-6 sm:py-6 sm:text-sm">
             <Link href="/" className="justify-self-start leading-[1.05] hover:text-white/80">
-              <span className="block sm:inline">Р—Р°С…Р°СЂСЊСЏС‰РµРІР°</span>
-              <span className="block sm:ml-1 sm:inline">Р”Р°СЂСЊСЏ</span>
+              <span className="block sm:inline">Захарьящева</span>
+              <span className="block sm:ml-1 sm:inline">Дарья</span>
             </Link>
 
             <nav className="grid grid-cols-2 items-center text-white/80 sm:col-span-3 sm:grid-cols-3">
               <Link href="/work" className="justify-self-center whitespace-nowrap hover:text-white">
                 CV
               </Link>
-              <Link href="/#about" className="justify-self-center whitespace-nowrap hover:text-white">
-                РћР±Рѕ РјРЅРµ
+              <Link href="/#about" className="hidden justify-self-center whitespace-nowrap hover:text-white sm:inline">
+                Обо мне
               </Link>
               <a
                 href="https://t.me/i_young_designer"
@@ -52,4 +52,3 @@ export default function RootLayout({
     </html>
   );
 }
-

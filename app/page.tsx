@@ -12,18 +12,18 @@ export default function HomePage() {
         <div className="space-y-8 md:space-y-20">
           <div className="w-full max-w-[760px]">
             <img
-              src="/images/Р°РІР°-РЅСЊСЋ.png"
-              alt="Р”Р°СЂСЊСЏ Р—Р°С…Р°СЂСЊСЏС‰РµРІР°"
+              src="/images/ава-нью.png"
+              alt="Дарья Захарьящева"
               className="aspect-[5/4] w-full rounded-[18px] object-cover"
             />
           </div>
 
           <div id="about" className="max-w-[1300px] space-y-3 md:space-y-5 scroll-mt-24">
             <h1 className="font-display text-5xl font-medium leading-[1.04] text-white sm:text-6xl lg:text-7xl">
-              РџСЂРёРІРµС‚! РЇ Р”Р°СЂСЊСЏ Р—Р°С…Р°СЂСЊСЏС‰РµРІР°
+              Привет! Я Дарья Захарьящева
             </h1>
             <p className="font-display text-[2.25rem] leading-[1.12] text-white/80 sm:text-5xl lg:text-6xl">
-              Р”РёР·Р°Р№РЅРµСЂ РІРёР·СѓР°Р»СЊРЅС‹С… РєРѕРЅС†РµРїС†РёР№ Рё key visual СЃ 7-Р»РµС‚РЅРёРј РѕРїС‹С‚РѕРј, СЂР°Р±РѕС‚Р°СЋ СЃ AI РЎСЂРµРґРё РїСЂРѕРµРєС‚РѕРІ вЂ” РЎР±РµСЂ, Р’Рљ, РЇРЅРґРµРєСЃ, Winline, РЎР°РјРѕР»РµС‚, Р‘Р°Р»С‚РёРєР°
+              Дизайнер визуальных концепций и key visual с 7-летним опытом, работаю с AI Среди проектов — Сбер, ВК, Яндекс, Winline, Самолет, Балтика
             </p>
           </div>
         </div>
@@ -32,9 +32,9 @@ export default function HomePage() {
       {/* FEATURED PROJECTS */}
       <section className="space-y-6">
         <div className="flex items-end justify-between">
-          <h2 className="text-2xl font-medium">РР·Р±СЂР°РЅРЅС‹Рµ РїСЂРѕРµРєС‚С‹</h2>
+          <h2 className="text-2xl font-medium">Избранные проекты</h2>
           <a href="/work" className="text-sm text-white/70 hover:text-white">
-            Р’СЃРµ РїСЂРѕРµРєС‚С‹ {'->'}
+            Все проекты {'->'}
           </a>
         </div>
 
