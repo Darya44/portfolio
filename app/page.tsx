@@ -1,4 +1,4 @@
-﻿import { ProjectCard } from "@/components/project-card";
+import { ProjectCard } from "@/components/project-card";
 import { featuredProjects } from "@/data/projects";
 
 export default function HomePage() {
@@ -6,35 +6,22 @@ export default function HomePage() {
     <div className="space-y-16">
       {/* HERO */}
       <section className="pt-6">
-        <div className="flex flex-col-reverse items-start gap-14 md:flex-row">
-          {/* Фото */}
-          <div className="w-full max-w-[44ch]">
+        <div className="space-y-16 md:space-y-20">
+          <div className="w-full max-w-[760px]">
             <img
               src="/images/ава-нью.png"
               alt="Дарья Захарьящева"
-              className="aspect-square w-full rounded-[40px] object-cover"
+              className="aspect-[5/4] w-full rounded-[18px] object-cover"
             />
           </div>
 
-          {/* Текст */}
-          <div className="w-full md:pt-2">
-            <h1 className="font-display text-5xl font-bold leading-[0.95] md:text-7xl">
-              Дарья
-              <br />
-              Захарьящева
+          <div className="max-w-[1300px] space-y-3 md:space-y-5">
+            <h1 className="font-display text-5xl font-medium leading-[1.04] text-white sm:text-6xl lg:text-7xl">
+              Привет! Я Дарья Захарьящева
             </h1>
-
-            <div className="mt-8 max-w-[44ch] space-y-2 text-lg leading-relaxed text-white">
-              <p>
-                Я работаю креативным дизайнером в агентстве «Цех» и создаю визуальные концепции для Сбера,
-                Яндекса, VK, Winline, Самолёта, Балтики и других брендов.
-              </p>
-
-              <p>
-                Работаю на стыке графического и digital-дизайна, интегрирую AI-инструменты в креативные процессы
-                и обучаю этому коллег.
-              </p>
-            </div>
+            <p className="font-display text-4xl leading-[1.12] text-white/80 sm:text-5xl lg:text-6xl">
+              Дизайнер визуальных концепций и key visual с 7-летним опытом, работаю с AI Среди проектов — Сбер, ВК, Яндекс, Winline, Самолет, Балтика
+            </p>
           </div>
         </div>
       </section>
@@ -42,7 +29,7 @@ export default function HomePage() {
       {/* FEATURED PROJECTS */}
       <section className="space-y-6">
         <div className="flex items-end justify-between">
-          <h2 className="text-2xl font-semibold">Избранные проекты</h2>
+          <h2 className="text-2xl font-medium">Избранные проекты</h2>
           <a href="/work" className="text-sm text-white/70 hover:text-white">
             Все проекты {'->'}
           </a>
@@ -96,3 +83,4 @@ export default function HomePage() {
     </div>
   );
 }
+

@@ -17,7 +17,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
       <div className="p-5">
         <div className="flex items-center justify-between gap-4">
-          <h3 className="text-lg font-semibold">{project.title}</h3>
+          <h3 className="text-lg font-medium">{project.title}</h3>
           <span className="text-xs text-white/60">{project.year}</span>
         </div>
 
@@ -37,3 +37,4 @@ export function ProjectCard({ project }: { project: Project }) {
     </Link>
   );
 }
+

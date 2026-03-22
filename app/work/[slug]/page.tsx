@@ -186,11 +186,27 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       <img src="/notion/Lootboxes/lootboxes-cover.png" alt="Lootboxes Winline cover" className="w-full h-auto rounded-2xl" loading="lazy" />
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
+        <video
+          className="w-full h-auto rounded-2xl"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          disablePictureInPicture
+        >
           <source src="/notion/Lootboxes/_OVERTIME_1024x1024-original.mp4" type="video/mp4" />
         </video>
 
-        <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
+        <video
+          className="w-full h-auto rounded-2xl"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          disablePictureInPicture
+        >
           <source src="/notion/Lootboxes/original.mp4" type="video/mp4" />
         </video>
       </div>
@@ -199,13 +215,21 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       <img src="/notion/Lootboxes/Nachaloo2.png" alt="Lootboxes Winline Nachaloo2" className="w-full h-auto rounded-2xl" loading="lazy" />
       <img src="/notion/Lootboxes/Nachalo3.png" alt="Lootboxes Winline Nachalo3" className="w-full h-auto rounded-2xl" loading="lazy" />
 
-      <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
+      <video
+        className="w-full h-auto rounded-2xl"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        disablePictureInPicture
+      >
         <source src="/notion/Lootboxes/wnl_blue_1080x1080_v002-original.mp4" type="video/mp4" />
       </video>
 
       <img src="/notion/Lootboxes/Vsu_lineika.png" alt="Lootboxes Winline Vsu lineika" className="w-full h-auto rounded-2xl" loading="lazy" />
       <img src="/notion/Lootboxes/Area_51.png" alt="Lootboxes Winline Area 51" className="w-full h-auto rounded-2xl" loading="lazy" />
-      <img src="/notion/Lootboxes/Overtime.png" alt="Lootboxes Winline Overtime" className="w-full h-auto rounded-2xl" loading="lazy" />
+      <img src="/notion/Lootboxes/Overtime.png?v=2" alt="Lootboxes Winline Overtime" className="w-full h-auto rounded-2xl" loading="lazy" />
     </div>
   );
 
