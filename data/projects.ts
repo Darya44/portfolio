@@ -75,15 +75,15 @@ export const projects = [
   order: 1
 },
   {
-    slug: 'aurora-ecommerce-growth',
-    title: 'Aurora eCommerce Growth',
-    client: 'Aurora Store',
-    year: 2023,
-    role: ['Lead UX/UI Designer'],
-    tags: ['eCommerce', 'CRO', 'Analytics'],
-    shortDescription: 'Оптимизация каталога и checkout-потока для роста конверсии.',
+    slug: 'Лутбоксы Winline',
+    title: 'Лутбоксы Winline',
+    client: 'Winline',
+    year: 2024,
+    role: ['Concept designer'],
+    tags: ['Concept design', 'retouch', 'Visual System'],
+    shortDescription: 'Создание концепции игровых лутбоксов для приложения Winline.',
     coverImage:
-      'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1600&q=80',
+      '/notion/Lootboxes/lootboxes-cover.png',
     sections: [
       {
         title: 'Gallery',
