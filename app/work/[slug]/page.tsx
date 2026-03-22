@@ -10,7 +10,6 @@ type ProjectPageProps = {
 export function generateStaticParams() {
   return sortedProjects.map((project) => ({ slug: project.slug }));
 }
-
 export default function ProjectPage({ params }: ProjectPageProps) {
   const project = getProjectBySlug(params.slug);
   const isWinlineCase = params.slug === 'kv-winline';
@@ -24,18 +23,28 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     : [{ title: 'Overview', images: [project.coverImage] }, ...project.sections];
   const currentIndex = sortedProjects.findIndex((item) => item.slug === project.slug);
   const nextProject = sortedProjects[(currentIndex + 1) % sortedProjects.length];
+  const isFirstCase = currentIndex === 0;
+  const nextLinkClass = isFirstCase
+    ? 'text-2xl font-normal leading-none text-white hover:text-white/80 max-[374px]:text-xl sm:text-3xl md:text-4xl'
+    : 'text-4xl font-normal leading-none text-white hover:text-white/80';
+  const nextArrowClass = isFirstCase
+    ? 'ml-2 inline-block align-middle text-[0.85em] font-light max-[374px]:ml-1.5 max-[374px]:text-[0.8em] sm:ml-3 md:ml-4 md:text-[0.95em]'
+    : 'ml-4 inline-block align-middle text-[0.95em] font-light';
+  const footerGridClass = isFirstCase
+    ? 'grid grid-cols-1 gap-8 text-lg leading-tight max-[374px]:text-base sm:text-xl md:grid-cols-[1.4fr_1fr_1fr] md:text-3xl'
+    : 'grid grid-cols-1 gap-8 text-2xl leading-tight md:grid-cols-[1.4fr_1fr_1fr] md:text-3xl';
   const caseFooter = (
     <section className="space-y-10 pt-8">
       <div className="flex justify-end">
-        <Link href={`/work/${nextProject.slug}`} className="text-4xl font-normal leading-none text-white hover:text-white/80">
+        <Link href={`/work/${nextProject.slug}`} className={nextLinkClass}>
           <span className="align-middle">next</span>
-          <span className="ml-4 inline-block align-middle text-[0.95em] font-light">→</span>
+          <span className={nextArrowClass}>→</span>
         </Link>
       </div>
 
       <div className="relative left-1/2 right-1/2 my-12 w-screen -ml-[50vw] -mr-[50vw] border-t border-neutral-700" />
 
-      <div className="grid grid-cols-1 gap-8 text-2xl leading-tight md:grid-cols-[1.4fr_1fr_1fr] md:text-3xl">
+      <div className={footerGridClass}>
         <div className="space-y-2">
           <a href="mailto:zakharyashchevad@bk.ru" className="block hover:text-white/80">
             zakharyashchevad@bk.ru
@@ -188,3 +197,4 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     </article>
   );
 }
+
