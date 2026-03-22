@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Arial", "Helvetica", "sans-serif"],
-        display: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+        sans: ["var(--font-inter)", "sans-serif"],
+        display: ["var(--font-inter)", "sans-serif"],
       },
     },
   },

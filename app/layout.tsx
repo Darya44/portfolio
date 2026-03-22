@@ -1,10 +1,16 @@
-﻿import "./globals.css";
-import type { Metadata } from "next";
-import Link from "next/link";
+import './globals.css';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Darya portfolio",
+  title: 'Portfolio',
+  description: 'Darya portfolio',
 };
 
 export default function RootLayout({
@@ -14,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className="min-h-screen bg-black text-white font-sans">
+      <body className={`${inter.variable} min-h-screen bg-black text-white font-sans`}>
         <header className="border-b border-white/10">
           <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-6">
             <Link href="/" className="text-xl font-semibold tracking-tight">
@@ -34,4 +40,3 @@ export default function RootLayout({
     </html>
   );
 }
-
