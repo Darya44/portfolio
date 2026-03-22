@@ -53,29 +53,25 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 gap-8 text-3xl leading-tight md:grid-cols-[1.4fr_1fr_1fr]">
           <div className="space-y-2">
-            <a href="mailto:postbolshakova@gmail.com" className="block hover:text-white/80">
-              postbolshakova@gmail.com
+            <a href="mailto:zakharyashchevad@bk.ru" className="block hover:text-white/80">
+              zakharyashchevad@bk.ru
             </a>
-            <a href="tel:+79295277902" className="block hover:text-white/80">
-              +7 929 527 79 02
-            </a>
-          </div>
-
-          <div className="space-y-2">
-            <a href="#" className="block hover:text-white/80">
-              instagram
-            </a>
-            <a href="#" className="block hover:text-white/80">
-              facebook
+            <a href="tel:+79521265853" className="block hover:text-white/80">
+              +7 (952) 126 58 53
             </a>
           </div>
 
           <div className="space-y-2">
-            <a href="#" className="block hover:text-white/80">
-              linkedin
+            <p className="text-base text-white/60 md:text-lg">Telegram channel</p>
+            <a href="https://t.me/dashadesgn" target="_blank" rel="noreferrer" className="block hover:text-white/80">
+              @dashadesgn
             </a>
-            <a href="#" className="block hover:text-white/80">
-              behance
+          </div>
+
+          <div className="space-y-2">
+            <p className="text-base text-white/60 md:text-lg">My telegram</p>
+            <a href="https://t.me/i_young_designer" target="_blank" rel="noreferrer" className="block hover:text-white/80">
+              @i_young_designer
             </a>
           </div>
         </div>
