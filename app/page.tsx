@@ -1,11 +1,14 @@
+'use client';
+
 import { ProjectCard } from "@/components/project-card";
 import { featuredProjects } from "@/data/projects";
+import { motion } from "framer-motion";
 
 export default function HomePage() {
   return (
     <div className="space-y-16">
       {/* HERO */}
-      <section className="pt-6">
+      <section className="-mt-8 pt-0 md:-mt-10">
         <div className="space-y-16 md:space-y-20">
           <div className="w-full max-w-[760px]">
             <img
@@ -15,7 +18,7 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="max-w-[1300px] space-y-3 md:space-y-5">
+          <div id="about" className="max-w-[1300px] space-y-3 md:space-y-5 scroll-mt-24">
             <h1 className="font-display text-5xl font-medium leading-[1.04] text-white sm:text-6xl lg:text-7xl">
               Привет! Я Дарья Захарьящева
             </h1>
@@ -35,11 +38,51 @@ export default function HomePage() {
           </a>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <motion.div
+          className="grid gap-6 md:grid-cols-2"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.12,
+                delayChildren: 0.1,
+              },
+            },
+          }}
+        >
           {featuredProjects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+            <motion.div
+              key={project.slug}
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: 30,
+                  scale: 0.98,
+                  filter: "blur(6px)",
+                },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  filter: "blur(0px)",
+                },
+              }}
+              transition={{
+                duration: 0.7,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
+              whileHover={{
+                scale: 1.02,
+                transition: { duration: 0.3 },
+              }}
+            >
+              <ProjectCard project={project} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       <section className="space-y-10 pt-8">
