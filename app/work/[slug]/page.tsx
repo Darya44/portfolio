@@ -183,13 +183,17 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
   const renderLootboxesRight = () => (
     <div className="space-y-6">
-      <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
-        <source src="/notion/Lootboxes/_OVERTIME_1024x1024-original.mp4" type="video/mp4" />
-      </video>
+      <img src="/notion/Lootboxes/lootboxes-cover.png" alt="Lootboxes Winline cover" className="w-full h-auto rounded-2xl" loading="lazy" />
 
-      <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
-        <source src="/notion/Lootboxes/original.mp4" type="video/mp4" />
-      </video>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
+          <source src="/notion/Lootboxes/_OVERTIME_1024x1024-original.mp4" type="video/mp4" />
+        </video>
+
+        <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
+          <source src="/notion/Lootboxes/original.mp4" type="video/mp4" />
+        </video>
+      </div>
 
       <img src="/notion/Lootboxes/Nachaloo1.png" alt="Lootboxes Winline Nachaloo1" className="w-full h-auto rounded-2xl" loading="lazy" />
       <img src="/notion/Lootboxes/Nachaloo2.png" alt="Lootboxes Winline Nachaloo2" className="w-full h-auto rounded-2xl" loading="lazy" />
