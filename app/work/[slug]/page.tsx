@@ -23,16 +23,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     : [{ title: 'Overview', images: [project.coverImage] }, ...project.sections];
   const currentIndex = sortedProjects.findIndex((item) => item.slug === project.slug);
   const nextProject = sortedProjects[(currentIndex + 1) % sortedProjects.length];
-  const isFirstCase = currentIndex === 0;
-  const nextLinkClass = isFirstCase
-    ? 'text-2xl font-normal leading-none text-white hover:text-white/80 max-[374px]:text-xl sm:text-3xl md:text-4xl'
-    : 'text-4xl font-normal leading-none text-white hover:text-white/80';
-  const nextArrowClass = isFirstCase
-    ? 'ml-2 inline-block align-middle text-[0.85em] font-light max-[374px]:ml-1.5 max-[374px]:text-[0.8em] sm:ml-3 md:ml-4 md:text-[0.95em]'
-    : 'ml-4 inline-block align-middle text-[0.95em] font-light';
-  const footerGridClass = isFirstCase
-    ? 'grid grid-cols-1 gap-8 text-lg leading-tight max-[374px]:text-base sm:text-xl md:grid-cols-[1.4fr_1fr_1fr] md:text-3xl'
-    : 'grid grid-cols-1 gap-8 text-2xl leading-tight md:grid-cols-[1.4fr_1fr_1fr] md:text-3xl';
+  const nextLinkClass = 'text-2xl font-normal leading-none text-white hover:text-white/80 max-[374px]:text-xl sm:text-3xl md:text-4xl';
+  const nextArrowClass =
+    'ml-2 inline-block align-middle text-[0.85em] font-light max-[374px]:ml-1.5 max-[374px]:text-[0.8em] sm:ml-3 md:ml-4 md:text-[0.95em]';
+  const footerGridClass = 'grid grid-cols-1 gap-8 text-lg leading-tight max-[374px]:text-base sm:text-xl md:grid-cols-[1.4fr_1fr_1fr] md:text-3xl';
   const caseFooter = (
     <section className="space-y-10 pt-8">
       <div className="flex justify-end">
@@ -54,18 +48,20 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           </a>
         </div>
 
-        <div className="space-y-2">
-          <p className="text-base text-white/60 md:text-lg">Telegram channel</p>
-          <a href="https://t.me/dashadesgn" target="_blank" rel="noreferrer" className="block hover:text-white/80">
-            @dashadesgn
-          </a>
-        </div>
+        <div className="grid grid-cols-2 gap-8 md:contents">
+          <div className="space-y-2">
+            <p className="text-base text-white/60 md:text-lg">Telegram channel</p>
+            <a href="https://t.me/dashadesgn" target="_blank" rel="noreferrer" className="block hover:text-white/80">
+              @dashadesgn
+            </a>
+          </div>
 
-        <div className="space-y-2">
-          <p className="text-base text-white/60 md:text-lg">My telegram</p>
-          <a href="https://t.me/i_young_designer" target="_blank" rel="noreferrer" className="block hover:text-white/80">
-            @i_young_designer
-          </a>
+          <div className="space-y-2">
+            <p className="text-base text-white/60 md:text-lg">My telegram</p>
+            <a href="https://t.me/i_young_designer" target="_blank" rel="noreferrer" className="block hover:text-white/80">
+              @i_young_designer
+            </a>
+          </div>
         </div>
       </div>
     </section>
