@@ -106,7 +106,7 @@ export const projects = [
     slug: 'edtech-mentor-platform',
     title: 'Обои Winline',
     client: 'Edwise',
-    year: 2022,
+    year: 2024,
     role: ['Product Designer'],
     tags: ['Branding', 'Wallpapers', 'Visual Design'],
     shortDescription: 'Две серии iOS-заставок для Winline: новогодняя и брендовая с командами и амбассадорами',
