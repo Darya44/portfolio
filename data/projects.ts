@@ -75,12 +75,12 @@ export const projects = [
   order: 1
 },
   {
-    slug: 'Лутбоксы Winline',
+    slug: 'lootboxes-winline',
     title: 'Лутбоксы Winline',
     client: 'Winline',
     year: 2024,
     role: ['Concept designer'],
-    tags: ['Concept design', 'Retouch', 'Visual System'],
+    tags: ['Concept design', 'retouch', 'Visual System'],
     shortDescription: 'Создание концепции игровых лутбоксов для приложения Winline.',
     coverImage:
       '/notion/Lootboxes/lootboxes-cover.png',
@@ -88,12 +88,8 @@ export const projects = [
       {
         title: 'Gallery',
         images: [
-          '/notion/Lootboxes/Nachaloo1.png',
-          '/notion/Lootboxes/Nachaloo2.png',
-          '/notion/Lootboxes/Nachalo3.png',
-          '/notion/Lootboxes/Area_51.png',
-          '/notion/Lootboxes/Vsu_lineika.png',
-          '/notion/Lootboxes/Overtime.png'
+          'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80',
+          'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1600&q=80'
         ]
       }
     ],
@@ -108,14 +104,14 @@ export const projects = [
   },
   {
     slug: 'edtech-mentor-platform',
-    title: 'Обои Winline',
+    title: 'Mentor Platform',
     client: 'Edwise',
-    year: 2024,
+    year: 2022,
     role: ['Product Designer'],
-    tags: ['Branding', 'Wallpapers', 'Visual Design'],
-    shortDescription: 'Две серии iOS-заставок для Winline: новогодняя и брендовая с командами и амбассадорами',
+    tags: ['EdTech', 'Web App', 'UX'],
+    shortDescription: 'Платформа для обучения с трекингом прогресса и личным наставничеством.',
     coverImage:
-      '/wallpapers/1-блок.png',
+      'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80',
     sections: [
       {
         title: 'Gallery',
@@ -274,5 +270,23 @@ export const sortedProjects = [...projects].sort((a, b) => a.order - b.order);
 
 export const featuredProjects = sortedProjects.filter((project) => project.featured);
 
-export const getProjectBySlug = (slug: string) =>
-  sortedProjects.find((project) => project.slug === slug);
+const legacySlugMap: Record<string, string> = {
+  'Лутбоксы Winline': 'lootboxes-winline'
+};
+
+const normalizeSlug = (value: string) => {
+  const safeDecoded = (() => {
+    try {
+      return decodeURIComponent(value);
+    } catch {
+      return value;
+    }
+  })();
+
+  return legacySlugMap[safeDecoded] ?? safeDecoded;
+};
+
+export const getProjectBySlug = (slug: string) => {
+  const normalizedSlug = normalizeSlug(slug);
+  return sortedProjects.find((project) => normalizeSlug(project.slug) === normalizedSlug);
+};
