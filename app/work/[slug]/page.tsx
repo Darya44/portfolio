@@ -23,6 +23,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const project = getProjectBySlug(decodedSlug);
   const isWinlineCase = decodedSlug === 'kv-winline';
   const isLootboxesCase = decodedSlug === 'lootboxes-winline';
+  const isWallpapersCase = decodedSlug === 'edtech-mentor-platform';
   const isCustomCaseLayout = isWinlineCase || isLootboxesCase;
 
   if (!project) {
@@ -113,6 +114,28 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       <p>
         В результате получилась масштабируемая визуальная система, которая поддерживает геймификацию продукта и легко адаптируется под
         разные типы лутбоксов и кампаний.
+      </p>
+    </div>
+  );
+
+  const renderWallpapersLeft = () => (
+    <div className="space-y-5 font-sans text-white/85 [&>p]:max-w-[380px] [&>p]:text-white/70">
+      <h1 className="font-display font-bold text-[48px] text-white whitespace-pre-line" style={{ lineHeight: '1' }}>
+        {'Обои\nWinline'}
+      </h1>
+      <p>
+        Задача заключалась в разработке двух серий iOS-заставок для Winline: новогодней и серии, посвящённой командам и
+        амбассадорам бренда. Важно было сохранить визуальную целостность и адаптировать стиль под разные контексты -
+        сезонный и брендовый.
+      </p>
+      <p>
+        В процессе работы я прорабатывала композицию, свет и цветовые решения, интегрируя фирменные элементы Winline в
+        сюжетные сцены. В новогодней серии акцент сделан на атмосферу праздника через окружение и детали, а в серии с
+        командами - на айдентику и узнаваемость через цвета и символику.
+      </p>
+      <p>
+        В результате получились две визуально связанные серии заставок, которые усиливают присутствие бренда в интерфейсе
+        и легко масштабируются под новые кампании и события.
       </p>
     </div>
   );
@@ -237,7 +260,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     <>
       {displayedSections.map((section) => (
         <section key={section.title} className="space-y-4">
-          <h2 className="text-xl font-semibold text-white">{section.title}</h2>
+          {section.title !== 'Overview' && <h2 className="text-xl font-semibold text-white">{section.title}</h2>}
 
           {section.images.length === 1 ? (
             <img
@@ -271,7 +294,15 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </Link>
 
       <CaseLayout
-        left={isWinlineCase ? renderWinlineLeft() : isLootboxesCase ? renderLootboxesLeft() : renderDefaultLeft()}
+        left={
+          isWinlineCase
+            ? renderWinlineLeft()
+            : isLootboxesCase
+              ? renderLootboxesLeft()
+              : isWallpapersCase
+                ? renderWallpapersLeft()
+                : renderDefaultLeft()
+        }
         right={isWinlineCase ? renderWinlineRight() : isLootboxesCase ? renderLootboxesRight() : renderDefaultRight()}
       />
 
