@@ -1,5 +1,3 @@
-update project title 
-update name 
 export type ProjectLink = {
   label: string;
   url: string;
