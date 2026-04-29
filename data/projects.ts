@@ -111,7 +111,7 @@ export const projects = [
     tags: ['Branding', 'Wallpapers', 'Visual Design'],
     shortDescription: 'Две серии iOS-заставок для Winline: новогодняя и брендовая с командами и амбассадорами',
     coverImage:
-      '/wallpapers/1 блок.png',
+      '/wallpapers/1-блок.png',
     sections: [
       {
         title: 'Gallery',
