@@ -75,12 +75,12 @@ export const projects = [
   order: 1
 },
   {
-    slug: 'lootboxes-winline',
+    slug: 'Лутбоксы Winline',
     title: 'Лутбоксы Winline',
     client: 'Winline',
     year: 2024,
     role: ['Concept designer'],
-    tags: ['Concept design', 'retouch', 'Visual System'],
+    tags: ['Concept design', 'Retouch', 'Visual System'],
     shortDescription: 'Создание концепции игровых лутбоксов для приложения Winline.',
     coverImage:
       '/notion/Lootboxes/lootboxes-cover.png',
@@ -104,7 +104,7 @@ export const projects = [
   },
   {
     slug: 'edtech-mentor-platform',
-    title: 'Обои Winline',
+    title: 'Mentor Platform',
     client: 'Edwise',
     year: 2022,
     role: ['Product Designer'],
@@ -270,23 +270,5 @@ export const sortedProjects = [...projects].sort((a, b) => a.order - b.order);
 
 export const featuredProjects = sortedProjects.filter((project) => project.featured);
 
-const legacySlugMap: Record<string, string> = {
-  'Лутбоксы Winline': 'lootboxes-winline'
-};
-
-const normalizeSlug = (value: string) => {
-  const safeDecoded = (() => {
-    try {
-      return decodeURIComponent(value);
-    } catch {
-      return value;
-    }
-  })();
-
-  return legacySlugMap[safeDecoded] ?? safeDecoded;
-};
-
-export const getProjectBySlug = (slug: string) => {
-  const normalizedSlug = normalizeSlug(slug);
-  return sortedProjects.find((project) => normalizeSlug(project.slug) === normalizedSlug);
-};
+export const getProjectBySlug = (slug: string) =>
+  sortedProjects.find((project) => project.slug === slug);
