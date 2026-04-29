@@ -104,7 +104,7 @@ export const projects = [
   },
   {
     slug: 'edtech-mentor-platform',
-    title: 'Mentor Platform',
+    title: 'Обои Winline',
     client: 'Edwise',
     year: 2022,
     role: ['Product Designer'],
