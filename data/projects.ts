@@ -88,8 +88,12 @@ export const projects = [
       {
         title: 'Gallery',
         images: [
-          'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80',
-          'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1600&q=80'
+          '/notion/Lootboxes/Nachaloo1.png',
+          '/notion/Lootboxes/Nachaloo2.png',
+          '/notion/Lootboxes/Nachalo3.png',
+          '/notion/Lootboxes/Area_51.png',
+          '/notion/Lootboxes/Vsu_lineika.png',
+          '/notion/Lootboxes/Overtime.png'
         ]
       }
     ],
