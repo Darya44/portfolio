@@ -108,10 +108,10 @@ export const projects = [
     client: 'Edwise',
     year: 2022,
     role: ['Product Designer'],
-    tags: ['EdTech', 'Web App', 'UX'],
-    shortDescription: 'Платформа для обучения с трекингом прогресса и личным наставничеством.',
+    tags: ['Branding', 'Wallpapers', 'Visual Design'],
+    shortDescription: 'Две серии iOS-заставок для Winline: новогодняя и брендовая с командами и амбассадорами',
     coverImage:
-      'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80',
+      '/wallpapers/1 блок.png',
     sections: [
       {
         title: 'Gallery',
