@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { CaseLayout } from '@/components/case-layout';
@@ -21,6 +23,12 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   })();
 
   const project = getProjectBySlug(decodedSlug);
+  const wallpapersDir = path.join(process.cwd(), 'public', 'wallpapers');
+  const wallpaperImages = fs
+    .readdirSync(wallpapersDir)
+    .filter((file) => /\.(png|jpe?g|webp|gif)$/i.test(file))
+    .sort((a, b) => a.localeCompare(b, 'ru', { numeric: true }))
+    .map((file) => `/wallpapers/${encodeURIComponent(file)}`);
   const isWinlineCase = decodedSlug === 'kv-winline';
   const isLootboxesCase = decodedSlug === 'lootboxes-winline';
   const isWallpapersCase = decodedSlug === 'edtech-mentor-platform';
@@ -30,9 +38,13 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
+  const wallpapersSections = [{ title: 'Gallery', images: wallpaperImages }];
+
   const displayedSections = isCustomCaseLayout
     ? project.sections
-    : [{ title: 'Overview', images: [project.coverImage] }, ...project.sections];
+    : isWallpapersCase
+      ? wallpapersSections
+      : [{ title: 'Overview', images: [project.coverImage] }, ...project.sections];
 
   const currentIndex = sortedProjects.findIndex((item) => item.slug === project.slug);
   const nextProject = sortedProjects[(currentIndex + 1) % sortedProjects.length];
@@ -262,7 +274,19 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <section key={section.title} className="space-y-4">
           {section.title !== 'Overview' && <h2 className="text-xl font-semibold text-white">{section.title}</h2>}
 
-          {section.images.length === 1 ? (
+          {isWallpapersCase ? (
+            <div className="space-y-6">
+              {section.images.map((image, index) => (
+                <img
+                  key={`${section.title}-${index}`}
+                  src={image}
+                  alt={`${project.title} - ${section.title} ${index + 1}`}
+                  className="w-full h-auto rounded-2xl"
+                  loading="lazy"
+                />
+              ))}
+            </div>
+          ) : section.images.length === 1 ? (
             <img
               src={section.images[0]}
               alt={`${project.title} - ${section.title}`}

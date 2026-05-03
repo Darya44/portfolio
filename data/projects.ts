@@ -75,12 +75,12 @@ export const projects = [
   order: 1
 },
   {
-    slug: 'lootboxes-winline',
+    slug: 'Лутбоксы Winline',
     title: 'Лутбоксы Winline',
     client: 'Winline',
     year: 2024,
     role: ['Concept designer'],
-    tags: ['Concept design', 'retouch', 'Visual System'],
+    tags: ['Concept design', 'Retouch', 'Visual System'],
     shortDescription: 'Создание концепции игровых лутбоксов для приложения Winline.',
     coverImage:
       '/notion/Lootboxes/lootboxes-cover.png',
@@ -109,9 +109,9 @@ export const projects = [
     year: 2024,
     role: ['Product Designer'],
     tags: ['Branding', 'Wallpapers', 'Visual Design'],
-    shortDescription: 'Две серии iOS-заставок для Winline: новогодняя и брендовая с командами и амбассадорами.',
+    shortDescription: 'Две серии iOS-заставок для Winline: новогодняя и брендовая с командами и амбассадорами',
     coverImage:
-      '/wallpapers/1-блок.png',
+      '\wallpapers\1-блок.png',
     sections: [
       {
         title: 'Gallery',
@@ -121,12 +121,11 @@ export const projects = [
         ]
       }
     ],
-    problem: 'Задача заключалась в разработке двух серий iOS-заставок для Winline: новогодней и серии, посвящённой командам и амбассадорам бренда. Важно было сохранить визуальную целостность и адаптировать стиль под разные контексты - сезонный и брендовый.',
-    approach:
-      'В процессе работы я прорабатывала композицию, свет и цветовые решения, интегрируя фирменные элементы Winline в сюжетные сцены. В новогодней серии акцент сделан на атмосферу праздника через окружение и детали, а в серии с командами - на айдентику и узнаваемость через цвета и символику.',
-    outcome: 'В результате получились две визуально связанные серии заставок, которые усиливают присутствие бренда в интерфейсе и легко масштабируются под новые кампании и события.',
-    tools: ['GA4', 'Hotjar', 'Figma', 'Miro'],
-    links: [{ label: 'Live Store', url: 'https://example.com/aurora' }],
+    problem: 'Студенты теряли мотивацию из-за отсутствия прозрачных целей и обратной связи.',
+    approach: 'Добавили roadmap, weekly check-ins и визуальные сигналы прогресса в личном кабинете.',
+    outcome: 'Retention 8-недельной программы вырос с 42% до 63%.',
+    tools: ['Figma', 'FigJam', 'Amplitude'],
+    links: [{ label: 'Product Tour', url: 'https://example.com/edwise-tour' }],
     featured: true,
     order: 3
   },
@@ -271,23 +270,5 @@ export const sortedProjects = [...projects].sort((a, b) => a.order - b.order);
 
 export const featuredProjects = sortedProjects.filter((project) => project.featured);
 
-const legacySlugMap: Record<string, string> = {
-  'Лутбоксы Winline': 'lootboxes-winline'
-};
-
-const normalizeSlug = (value: string) => {
-  const safeDecoded = (() => {
-    try {
-      return decodeURIComponent(value);
-    } catch {
-      return value;
-    }
-  })();
-
-  return legacySlugMap[safeDecoded] ?? safeDecoded;
-};
-
-export const getProjectBySlug = (slug: string) => {
-  const normalizedSlug = normalizeSlug(slug);
-  return sortedProjects.find((project) => normalizeSlug(project.slug) === normalizedSlug);
-};
+export const getProjectBySlug = (slug: string) =>
+  sortedProjects.find((project) => project.slug === slug);
