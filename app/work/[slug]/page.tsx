@@ -30,7 +30,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     .sort((a, b) => a.localeCompare(b, 'ru', { numeric: true }))
     .map((file) => `/wallpapers/${encodeURIComponent(file)}`);
   const isWinlineCase = decodedSlug === 'kv-winline';
-  const isLootboxesCase = decodedSlug === 'lootboxes-winline';
+  const isLootboxesCase = decodedSlug === 'lootboxes-winline' || decodedSlug === 'Лутбоксы Winline';
   const isWallpapersCase = decodedSlug === 'edtech-mentor-platform';
   const isCustomCaseLayout = isWinlineCase || isLootboxesCase;
 
