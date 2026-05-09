@@ -86,15 +86,9 @@ export default function HomePage() {
       </section>
 
       <section className="space-y-10 pt-8">
-        <div className="flex justify-end">
-          <a href="/work" className="text-4xl font-medium leading-none text-white hover:text-white/80">
-            next {'->'}
-          </a>
-        </div>
-
         <div className="relative left-1/2 right-1/2 my-24 w-screen -ml-[50vw] -mr-[50vw] border-t border-neutral-700" />
 
-        <div className="grid grid-cols-1 gap-8 text-3xl leading-tight md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid grid-cols-1 gap-8 text-2xl leading-tight md:grid-cols-[1.4fr_1fr_1fr]">
           <div className="space-y-2">
             <a href="mailto:zakharyashchevad@bk.ru" className="block hover:text-white/80">
               zakharyashchevad@bk.ru
@@ -105,14 +99,14 @@ export default function HomePage() {
           </div>
 
           <div className="space-y-2">
-            <p className="text-base text-white/60 md:text-lg">Telegram channel</p>
+            <p className="text-sm text-white/60 md:text-base">Telegram channel</p>
             <a href="https://t.me/dashadesgn" target="_blank" rel="noreferrer" className="block hover:text-white/80">
               @dashadesgn
             </a>
           </div>
 
           <div className="space-y-2">
-            <p className="text-base text-white/60 md:text-lg">My telegram</p>
+            <p className="text-sm text-white/60 md:text-base">My telegram</p>
             <a href="https://t.me/i_young_designer" target="_blank" rel="noreferrer" className="block hover:text-white/80">
               @i_young_designer
             </a>

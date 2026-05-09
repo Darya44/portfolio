@@ -53,7 +53,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const nextArrowClass =
     'ml-2 inline-block align-middle text-[0.85em] font-light max-[374px]:ml-1.5 max-[374px]:text-[0.8em] sm:ml-3 md:ml-4 md:text-[0.95em]';
   const footerGridClass =
-    'grid grid-cols-1 gap-8 text-lg leading-tight max-[374px]:text-base sm:text-xl md:grid-cols-[1.4fr_1fr_1fr] md:text-3xl';
+    'grid grid-cols-1 gap-8 text-base leading-tight sm:text-lg md:grid-cols-[1.4fr_1fr_1fr] md:text-2xl';
 
   const caseFooter = (
     <section className="space-y-10 pt-8">
@@ -78,14 +78,14 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
         <div className="grid grid-cols-2 gap-8 md:contents">
           <div className="space-y-2">
-            <p className="text-base text-white/60 md:text-lg">Telegram channel</p>
+            <p className="text-sm text-white/60 md:text-base">Telegram channel</p>
             <a href="https://t.me/dashadesgn" target="_blank" rel="noreferrer" className="block hover:text-white/80">
               @dashadesgn
             </a>
           </div>
 
           <div className="space-y-2">
-            <p className="text-base text-white/60 md:text-lg">My telegram</p>
+            <p className="text-sm text-white/60 md:text-base">My telegram</p>
             <a href="https://t.me/i_young_designer" target="_blank" rel="noreferrer" className="block hover:text-white/80">
               @i_young_designer
             </a>
@@ -218,13 +218,13 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   );
 
   const renderLootboxesRight = () => (
-    <div className="space-y-6">
+    <div className="space-y-4">
       <img src="/notion/Lootboxes/lootboxes-cover.png" alt="Lootboxes Winline cover" className="w-full h-auto rounded-2xl" loading="lazy" />
       <img src="/notion/Lootboxes/Nachaloo1.png" alt="Lootboxes Winline start of work" className="w-full h-auto rounded-2xl" loading="lazy" />
       <img src="/notion/Lootboxes/Nachaloo2.png" alt="Lootboxes Winline first drafts" className="w-full h-auto rounded-2xl" loading="lazy" />
       <img src="/notion/Lootboxes/Nachalo3.png" alt="Lootboxes Winline color stretch" className="w-full h-auto rounded-2xl" loading="lazy" />
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
           <source src="/notion/Lootboxes/wnl_blue_1080x1080_v002-original.mp4" type="video/mp4" />
         </video>
