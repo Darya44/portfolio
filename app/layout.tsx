@@ -29,9 +29,14 @@ export default function RootLayout({
             </Link>
 
             <nav className="grid grid-cols-2 items-center text-white/80 sm:col-span-3 sm:grid-cols-3">
-              <Link href="/work" className="justify-self-center whitespace-nowrap hover:text-white">
+              <a
+                href="https://drive.google.com/uc?export=download&id=1o1tcMubK1McclwUnsMg3-yQRsltFDTVW"
+                target="_blank"
+                rel="noreferrer"
+                className="justify-self-center whitespace-nowrap hover:text-white"
+              >
                 CV
-              </Link>
+              </a>
               <Link href="/#about" className="hidden justify-self-center whitespace-nowrap hover:text-white sm:inline">
                 Обо мне
               </Link>
