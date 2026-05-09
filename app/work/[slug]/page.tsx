@@ -117,15 +117,16 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </h1>
       <p>
         Задача заключалась в разработке концепции для нескольких уровней игровых лутбоксов в приложении Winline: нужно было продумать
-        их различия и особенности, внедрить логотипы команд-амбассадоров и интегрировать игровые элементы, усиливающие вовлечение.
+        их различия и особенности, внедрить логотипы команд-амбассадоров и интегрировать игровые элементы, усиливающие вовлечение. Я
+        начала с анализа референсов из гейминга и беттинга и выделила ключевые визуальные паттерны.
       </p>
       <p>
         В процессе работы я прорабатывала форму боксов, материалы и световые эффекты, делая акцент на ощущении «энергии внутри» через
         свечение, градиенты и контрастные цвета.
       </p>
       <p>
-        В результате получилась масштабируемая визуальная система, которая поддерживает геймификацию продукта и легко адаптируется под
-        разные типы лутбоксов и кампаний.
+        В результате получилась масштабируемая визуальная система, которая поддерживает геймификацию продукта, усиливает эмоциональное
+        вовлечение пользователя и легко адаптируется под разные типы лутбоксов и кампаний, сохраняя единый стиль и узнаваемость.
       </p>
     </div>
   );
@@ -217,54 +218,39 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   );
 
   const renderLootboxesRight = () => (
-    <div className="space-y-6">
-      <img src="/notion/Lootboxes/lootboxes-cover.png" alt="Lootboxes Winline cover" className="w-full h-auto rounded-2xl" loading="lazy" />
+    <div className="space-y-16">
+      <section className="space-y-6">
+        <img src="/notion/Lootboxes/lootboxes-cover.png" alt="Lootboxes Winline cover" className="w-full h-auto rounded-2xl" loading="lazy" />
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <video
-          className="w-full h-auto rounded-2xl"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          disablePictureInPicture
-        >
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
+            <source src="/notion/Lootboxes/wnl_blue_1080x1080_v002-original.mp4" type="video/mp4" />
+          </video>
+
+          <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
+            <source src="/notion/Lootboxes/wnl_purple_1080x1080_v002-original.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+
+      <section className="space-y-6">
+        <h2 className="text-xl font-semibold text-white">Моя коллекция лутбоксов Winline</h2>
+
+        <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
           <source src="/notion/Lootboxes/_OVERTIME_1024x1024-original.mp4" type="video/mp4" />
         </video>
 
-        <video
-          className="w-full h-auto rounded-2xl"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          disablePictureInPicture
-        >
+        <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
           <source src="/notion/Lootboxes/original.mp4" type="video/mp4" />
         </video>
-      </div>
 
-      <img src="/notion/Lootboxes/Nachaloo1.png" alt="Lootboxes Winline Nachaloo1" className="w-full h-auto rounded-2xl" loading="lazy" />
-      <img src="/notion/Lootboxes/Nachaloo2.png" alt="Lootboxes Winline Nachaloo2" className="w-full h-auto rounded-2xl" loading="lazy" />
-      <img src="/notion/Lootboxes/Nachalo3.png" alt="Lootboxes Winline Nachalo3" className="w-full h-auto rounded-2xl" loading="lazy" />
-
-      <video
-        className="w-full h-auto rounded-2xl"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        disablePictureInPicture
-      >
-        <source src="/notion/Lootboxes/wnl_blue_1080x1080_v002-original.mp4" type="video/mp4" />
-      </video>
-
-      <img src="/notion/Lootboxes/Vsu_lineika.png" alt="Lootboxes Winline Vsu lineika" className="w-full h-auto rounded-2xl" loading="lazy" />
-      <img src="/notion/Lootboxes/Area_51.png" alt="Lootboxes Winline Area 51" className="w-full h-auto rounded-2xl" loading="lazy" />
-      <img src="/notion/Lootboxes/Overtime.png?v=2" alt="Lootboxes Winline Overtime" className="w-full h-auto rounded-2xl" loading="lazy" />
+        <img src="/notion/Lootboxes/Nachaloo1.png" alt="Lootboxes Winline Nachaloo1" className="w-full h-auto rounded-2xl" loading="lazy" />
+        <img src="/notion/Lootboxes/Nachaloo2.png" alt="Lootboxes Winline Nachaloo2" className="w-full h-auto rounded-2xl" loading="lazy" />
+        <img src="/notion/Lootboxes/Nachalo3.png" alt="Lootboxes Winline Nachalo3" className="w-full h-auto rounded-2xl" loading="lazy" />
+        <img src="/notion/Lootboxes/Vsu_lineika.png" alt="Lootboxes Winline Vsu lineika" className="w-full h-auto rounded-2xl" loading="lazy" />
+        <img src="/notion/Lootboxes/Area_51.png" alt="Lootboxes Winline Area 51" className="w-full h-auto rounded-2xl" loading="lazy" />
+        <img src="/notion/Lootboxes/Overtime.png" alt="Lootboxes Winline Overtime" className="w-full h-auto rounded-2xl" loading="lazy" />
+      </section>
     </div>
   );
 
