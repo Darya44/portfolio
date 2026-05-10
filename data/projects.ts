@@ -236,33 +236,6 @@ export const projects = [
     links: [{ label: 'Internal Demo', url: 'https://example.com/orbit-demo' }],
     featured: false,
     order: 7
-  },
-  {
-    slug: 'pulse-festival-experience',
-    title: 'Pulse Festival Experience',
-    client: 'Pulse Fest',
-    year: 2024,
-    role: ['Experience Designer'],
-    tags: ['Events', 'Mobile Web', 'Interactive'],
-    shortDescription: 'Интерактивный digital-гид для музыкального фестиваля.',
-    coverImage:
-      'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1600&q=80',
-    sections: [
-      {
-        title: 'Gallery',
-        images: [
-          'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80',
-          'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80'
-        ]
-      }
-    ],
-    problem: 'Посетители не успевали ориентироваться в расписании и активностях фестиваля.',
-    approach: 'Создали персонализированное расписание, push-навигацию и карту сцен.',
-    outcome: '65% посетителей использовали гид ежедневно в дни фестиваля.',
-    tools: ['Figma', 'Framer', 'GA4'],
-    links: [{ label: 'Event Site', url: 'https://example.com/pulse' }],
-    featured: true,
-    order: 8
   }
 ];
 
