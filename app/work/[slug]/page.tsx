@@ -54,6 +54,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     'ml-2 inline-block align-middle text-[0.85em] font-light max-[374px]:ml-1.5 max-[374px]:text-[0.8em] sm:ml-3 md:ml-4 md:text-[0.95em]';
   const footerGridClass =
     'grid grid-cols-1 gap-8 text-base leading-tight sm:text-lg md:grid-cols-[1.4fr_1fr_1fr] md:text-2xl';
+  const descriptionParagraphs = (project.caseDescription ?? project.shortDescription).split(/\n\s*\n/);
   const isVideo = (src: string) => /\.(mp4|webm|mov)$/i.test(src);
   const renderMedia = (src: string, alt: string, key?: string) =>
     isVideo(src) ? (
@@ -185,7 +186,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
       <div className="max-w-[380px] space-y-2 font-sans text-white/75">
         <p className="text-sm uppercase tracking-[0.2em] text-white/50">Description</p>
-        <p>{project.shortDescription}</p>
+        {descriptionParagraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
       </div>
     </>
   );

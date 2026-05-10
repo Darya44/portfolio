@@ -2,8 +2,6 @@ import Link from "next/link";
 import type { Project } from "@/data/projects";
 
 export function ProjectCard({ project }: { project: Project }) {
-  const descriptionParagraphs = project.shortDescription.split(/\n\s*\n/);
-
   return (
     <Link
       href={`/work/${project.slug}`}
@@ -23,11 +21,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <span className="text-xs text-white/60">{project.year}</span>
         </div>
 
-        <div className="mt-2 space-y-2 text-sm text-white/70">
-          {descriptionParagraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
+        <p className="mt-2 text-sm text-white/70">{project.shortDescription}</p>
 
         <div className="mt-3 flex flex-wrap gap-2">
           {project.tags.slice(0, 4).map((t) => (
