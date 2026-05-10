@@ -32,6 +32,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const isWinlineCase = decodedSlug === 'kv-winline';
   const isLootboxesCase = decodedSlug === 'lootboxes-winline' || decodedSlug === 'Лутбоксы Winline';
   const isWallpapersCase = decodedSlug === 'edtech-mentor-platform';
+  const isTendersCase = decodedSlug === 'medlink-patient-app';
   const isCustomCaseLayout = isWinlineCase || isLootboxesCase;
 
   if (!project) {
@@ -158,38 +159,41 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const renderDefaultLeft = () => (
     <>
       <div className="space-y-3">
-        <p className="text-sm uppercase tracking-[0.2em] text-white/50">Project</p>
         <h1 className="font-display text-4xl leading-[0.95] sm:text-5xl">{project.title}</h1>
       </div>
 
-      <div className="max-w-[380px] space-y-2 font-sans text-white/75">
-        <p>
-          <span className="text-white/50">Client:</span> {project.client}
-        </p>
-        <p>
-          <span className="text-white/50">Year:</span> {project.year}
-        </p>
-        <p>
-          <span className="text-white/50">Category:</span> {project.tags.join(', ')}
-        </p>
-      </div>
+      {!isTendersCase && (
+        <>
+          <div className="max-w-[380px] space-y-2 font-sans text-white/75">
+            <p>
+              <span className="text-white/50">Client:</span> {project.client}
+            </p>
+            <p>
+              <span className="text-white/50">Year:</span> {project.year}
+            </p>
+            <p>
+              <span className="text-white/50">Category:</span> {project.tags.join(', ')}
+            </p>
+          </div>
 
-      <div className="max-w-[380px] space-y-2 font-sans text-white/75">
-        <p className="text-sm uppercase tracking-[0.2em] text-white/50">Role</p>
-        <p>{project.role.join(', ')}</p>
-      </div>
+          <div className="max-w-[380px] space-y-2 font-sans text-white/75">
+            <p className="text-sm uppercase tracking-[0.2em] text-white/50">Role</p>
+            <p>{project.role.join(', ')}</p>
+          </div>
 
-      <div className="max-w-[380px] space-y-2 font-sans text-white/75">
-        <p className="text-sm uppercase tracking-[0.2em] text-white/50">Tools</p>
-        <p>{project.tools.join(', ')}</p>
-      </div>
+          <div className="max-w-[380px] space-y-2 font-sans text-white/75">
+            <p className="text-sm uppercase tracking-[0.2em] text-white/50">Tools</p>
+            <p>{project.tools.join(', ')}</p>
+          </div>
 
-      <div className="max-w-[380px] space-y-2 font-sans text-white/75">
-        <p className="text-sm uppercase tracking-[0.2em] text-white/50">Description</p>
-        {descriptionParagraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
-      </div>
+          <div className="max-w-[380px] space-y-2 font-sans text-white/75">
+            <p className="text-sm uppercase tracking-[0.2em] text-white/50">Description</p>
+            {descriptionParagraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        </>
+      )}
     </>
   );
 
@@ -258,7 +262,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     <>
       {displayedSections.map((section) => (
         <section key={section.title} className="space-y-4">
-          {section.title !== 'Overview' && <h2 className="text-xl font-semibold text-white">{section.title}</h2>}
+          {section.title !== 'Overview' && !isTendersCase && (
+            <h2 className="text-xl font-semibold text-white">{section.title}</h2>
+          )}
 
           {isWallpapersCase ? (
             <div className="space-y-6">
@@ -273,7 +279,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           ) : section.images.length === 1 ? (
             renderMedia(section.images[0], `${project.title} - ${section.title}`)
           ) : (
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className={isTendersCase ? 'space-y-6' : 'grid grid-cols-1 gap-6 md:grid-cols-2'}>
               {section.images.map((image, index) => (
                 renderMedia(
                   image,
@@ -288,24 +294,98 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     </>
   );
 
+  const tenderSections = [
+    {
+      title: project.title,
+      text: [
+        'В агенстве мне удалось поучаствовать в тендерах на креативную поддержку. Расскажу про некоторые кейсы от идей до их воплощения. Бренды с которыми я поработала: Лемана ПРО, Барьер, Купер.',
+        'Задача тендера Лемана ПРО: создать 3 КВ в различном цветовом кодировании в зависимости от сегмента сотрудников. Макеты призывали выбирать работу в проверенной компании, развиваться вместе с ней. Также были использованы фирменные сетки построения макетов бренда.',
+        'Каждый цвет соответствовал своему сегменту: серый - логисты, желтый - сотрудники гипермаркетов, оранжевый - руководители, фиолетовый - офисным сотрудникам. Общий КВ объединил все сегменты цветами и сеткой.'
+      ],
+      media: [
+        project.coverImage,
+        '/Tenders/%D0%BB%D0%B5%D0%BC%D0%B0%D0%BD%D0%B0%20%D0%B1%D0%BB%D0%BE%D0%BA.jpg',
+        '/Tenders/%D0%91%D0%BB%D0%BE%D0%BA%20%D0%BB%D0%B5%D0%BC%D0%B0%D0%BD%D0%B0%202.jpg',
+        '/Tenders/%D0%91%D0%BB%D0%BE%D0%BA%20%D0%BB%D0%B5%D0%BC%D0%B0%D0%BD%D0%B0%203.jpg',
+        '/Tenders/4%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%BB%D0%B5%D0%BC%D0%B0%D0%BD%D0%B0.png'
+      ]
+    },
+    {
+      title: '',
+      text: [
+        'Задача тендера Барьер: создать КВ на основе фото со съемки видео-ролика, создать костюм робота и подготовить раскадровку для анимационных баннеров. Цветокор баннера должен был отличаться от цвета неба, поэтому было решено частично затемнить и добавить фирменного бирюзового на фон.',
+        'Перед съемкой был нарисован скетч будущего баннера с роботом в ванне, который использует фильтр для воды, на его основе и были сделаны будущие кадры для КВ.'
+      ],
+      media: [
+        '/Tenders/%D0%91%D0%B0%D1%80%D1%8C%D0%B5%D1%80%201%20%D0%B1%D0%BB%D0%BE%D0%BA.png',
+        '/Tenders/2%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%B1%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D0%B0.png',
+        '/Tenders/3%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%B1%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D0%B0.png',
+        '/Tenders/5%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%B1%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D0%B0.png',
+        '/Tenders/960x720_%D0%90%D0%BD%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80-original.mp4'
+      ]
+    },
+    {
+      title: '',
+      text: [
+        'Задача тендера Купер: создать нескольок КВ по идеям гигантизма и гранжа с курьером - как главным героем. Задействовать нейросети из-за сжатых сроков, подготовить раскадровки с примерами анимации.'
+      ],
+      media: [
+        '/Tenders/1%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%BA%D1%83%D0%BF%D0%B5%D1%80.png',
+        '/Tenders/2%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%BA%D1%83%D0%BF%D0%B5%D1%80.png',
+        '/Tenders/3%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%BA%D1%83%D0%BF%D0%B5%D1%80.png',
+        '/Tenders/%D0%9E%D0%9E%D0%9D.png',
+        '/Tenders/KUPER_KV_FHD_v01-original.mp4'
+      ]
+    }
+  ];
+
+  const renderTendersCase = () => (
+    <div className="mx-auto w-full max-w-[1600px] space-y-16">
+      {tenderSections.map((section, sectionIndex) => (
+        <section key={`tenders-${sectionIndex}`} className="grid grid-cols-1 gap-10 md:grid-cols-[420px_minmax(0,1fr)]">
+          <aside className="space-y-5 font-sans text-white/75 md:sticky md:top-[120px] md:self-start">
+            {section.title && (
+              <h1 className="font-display text-4xl leading-[0.95] text-white sm:text-5xl">{section.title}</h1>
+            )}
+            {section.text.map((paragraph) => (
+              <p key={paragraph} className="max-w-[380px]">
+                {paragraph}
+              </p>
+            ))}
+          </aside>
+
+          <div className="space-y-6">
+            {section.media.map((src, index) =>
+              renderMedia(src, `${project.title} ${sectionIndex + 1}.${index + 1}`, `${sectionIndex}-${index}`)
+            )}
+          </div>
+        </section>
+      ))}
+    </div>
+  );
+
   return (
     <article className="space-y-10">
       <Link href="/work" className="inline-flex text-sm text-white/70 hover:text-white">
         ← Назад к кейсам
       </Link>
 
-      <CaseLayout
-        left={
-          isWinlineCase
-            ? renderWinlineLeft()
-            : isLootboxesCase
-              ? renderLootboxesLeft()
-              : isWallpapersCase
-                ? renderWallpapersLeft()
-                : renderDefaultLeft()
-        }
-        right={isWinlineCase ? renderWinlineRight() : isLootboxesCase ? renderLootboxesRight() : renderDefaultRight()}
-      />
+      {isTendersCase ? (
+        renderTendersCase()
+      ) : (
+        <CaseLayout
+          left={
+            isWinlineCase
+              ? renderWinlineLeft()
+              : isLootboxesCase
+                ? renderLootboxesLeft()
+                : isWallpapersCase
+                  ? renderWallpapersLeft()
+                  : renderDefaultLeft()
+          }
+          right={isWinlineCase ? renderWinlineRight() : isLootboxesCase ? renderLootboxesRight() : renderDefaultRight()}
+        />
+      )}
 
       {caseFooter}
     </article>
