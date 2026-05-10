@@ -29,7 +29,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FEATURED PROJECTS */}
+      {/* Избранные кейсы */}
       <section className="space-y-6">
         <div className="flex items-end justify-between">
           <h2 className="text-2xl font-medium">Избранные проекты</h2>

@@ -54,6 +54,15 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     'ml-2 inline-block align-middle text-[0.85em] font-light max-[374px]:ml-1.5 max-[374px]:text-[0.8em] sm:ml-3 md:ml-4 md:text-[0.95em]';
   const footerGridClass =
     'grid grid-cols-1 gap-8 text-base leading-tight sm:text-lg md:grid-cols-[1.4fr_1fr_1fr] md:text-2xl';
+  const isVideo = (src: string) => /\.(mp4|webm|mov)$/i.test(src);
+  const renderMedia = (src: string, alt: string, key?: string) =>
+    isVideo(src) ? (
+      <video key={key} className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
+        <source src={src} type="video/mp4" />
+      </video>
+    ) : (
+      <img key={key} src={src} alt={alt} className="w-full h-auto rounded-2xl" loading="lazy" />
+    );
 
   const caseFooter = (
     <section className="space-y-10 pt-8">
@@ -251,32 +260,23 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           {isWallpapersCase ? (
             <div className="space-y-6">
               {section.images.map((image, index) => (
-                <img
-                  key={`${section.title}-${index}`}
-                  src={image}
-                  alt={`${project.title} - ${section.title} ${index + 1}`}
-                  className="w-full h-auto rounded-2xl"
-                  loading="lazy"
-                />
+                renderMedia(
+                  image,
+                  `${project.title} - ${section.title} ${index + 1}`,
+                  `${section.title}-${index}`
+                )
               ))}
             </div>
           ) : section.images.length === 1 ? (
-            <img
-              src={section.images[0]}
-              alt={`${project.title} - ${section.title}`}
-              className="w-full h-auto rounded-2xl"
-              loading="lazy"
-            />
+            renderMedia(section.images[0], `${project.title} - ${section.title}`)
           ) : (
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               {section.images.map((image, index) => (
-                <img
-                  key={`${section.title}-${index}`}
-                  src={image}
-                  alt={`${project.title} - ${section.title} ${index + 1}`}
-                  className="w-full h-auto rounded-2xl"
-                  loading="lazy"
-                />
+                renderMedia(
+                  image,
+                  `${project.title} - ${section.title} ${index + 1}`,
+                  `${section.title}-${index}`
+                )
               ))}
             </div>
           )}
