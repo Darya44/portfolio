@@ -10,11 +10,11 @@ export default function HomePage() {
       {/* HERO */}
       <section className="-mt-8 pt-0 md:-mt-10">
         <div className="space-y-8 md:space-y-20">
-          <div className="w-full max-w-[760px]">
+          <div className="group w-full max-w-[760px] overflow-hidden rounded-[18px]">
             <img
               src="/images/ава-нью.png"
               alt="Дарья Захарьящева"
-              className="aspect-[5/4] w-full rounded-[18px] object-cover"
+              className="aspect-[5/4] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
             />
           </div>
 
