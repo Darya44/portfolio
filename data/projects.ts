@@ -185,14 +185,14 @@ export const projects = [
   },
   {
     slug: 'medlink-patient-app',
-    title: 'Medlink Patient App',
+    title: 'Тендеры',
     client: 'Medlink',
     year: 2023,
     role: ['UX Designer'],
-    tags: ['HealthTech', 'Mobile', 'Accessibility'],
-    shortDescription: 'Приложение для записи к врачам и мониторинга лечения.',
+    tags: ['Visual Design', 'Campaign', 'KV System'],
+    shortDescription: 'Создание визуалов для тендерных заданий.',
     coverImage:
-      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80',
+      '/Tenders/2%20%D0%B1%D0%BB%D0%BE%D0%BA.png',
     sections: [
       {
         title: 'Gallery',
