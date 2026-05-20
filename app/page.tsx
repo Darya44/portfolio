@@ -29,9 +29,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Избранные кейсы */}
+      {/* Мои проекты */}
       <section className="space-y-6">
-        <h2 className="text-2xl font-medium">Избранные проекты</h2>
+        <h2 className="text-2xl font-medium">Мои проекты</h2>
 
         <motion.div
           className="grid gap-6 md:grid-cols-2"

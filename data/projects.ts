@@ -265,7 +265,15 @@ export const projects = [
   }
 ];
 
-export const sortedProjects = [...projects].sort((a, b) => a.order - b.order);
+const hiddenProjectSlugs = new Set([
+  'helios-saas-dashboard',
+  'urbanfit-brand-site',
+  'orbit-logistics-portal',
+]);
+
+export const sortedProjects = [...projects]
+  .filter((project) => !hiddenProjectSlugs.has(project.slug))
+  .sort((a, b) => a.order - b.order);
 
 export const featuredProjects = sortedProjects.filter((project) => project.featured);
 
