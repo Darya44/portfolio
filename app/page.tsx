@@ -31,12 +31,7 @@ export default function HomePage() {
 
       {/* Избранные кейсы */}
       <section className="space-y-6">
-        <div className="flex items-end justify-between">
-          <h2 className="text-2xl font-medium">Избранные проекты</h2>
-          <a href="/work" className="text-sm text-white/70 hover:text-white">
-            Все проекты {'->'}
-          </a>
-        </div>
+        <h2 className="text-2xl font-medium">Избранные проекты</h2>
 
         <motion.div
           className="grid gap-6 md:grid-cols-2"

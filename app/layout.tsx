@@ -9,8 +9,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Portfolio',
-  description: 'Darya portfolio',
+  title: 'Дарья Захарьящева',
+  description: 'Портфолио Дарьи Захарьящевой',
+  icons: {
+    icon: [{ url: '/images/favicon.png', type: 'image/png' }],
+    shortcut: ['/images/favicon.png'],
+    apple: [{ url: '/images/favicon.png', type: 'image/png' }],
+  },
 };
 
 export default function RootLayout({
