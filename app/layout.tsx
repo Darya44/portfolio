@@ -8,7 +8,7 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-const siteTitle = 'Портфолио Захарьящевой Дарьи';
+const siteTitle = 'Захарьящева Дарья';
 
 export const metadata: Metadata = {
   title: siteTitle,
