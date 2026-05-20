@@ -23,7 +23,7 @@ export default function HomePage() {
               Привет! Я Дарья Захарьящева
             </h1>
             <p className="font-display text-[2.25rem] leading-[1.12] text-white/80 sm:text-5xl lg:text-6xl">
-              Дизайнер визуальных концепций и key visual с 7-летним опытом, работаю с AI Среди проектов — Сбер, ВК, Яндекс, Winline, Самолет, Балтика
+              Дизайнер визуальных концепций и key visual с 7-летним опытом, работаю с AI. Среди проектов — Сбер, ВК, Яндекс, Winline, Самолет, Балтика
             </p>
           </div>
         </div>
