@@ -8,9 +8,23 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
+const siteTitle = 'Портфолио Захарьящевой Дарьи';
+
 export const metadata: Metadata = {
-  title: 'Дарья Захарьящева',
-  description: 'Портфолио Дарьи Захарьящевой',
+  title: siteTitle,
+  description: siteTitle,
+  openGraph: {
+    title: siteTitle,
+    description: siteTitle,
+    siteName: siteTitle,
+    locale: 'ru_RU',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: siteTitle,
+    description: siteTitle,
+  },
   icons: {
     icon: [{ url: '/images/favicon.png', type: 'image/png' }],
     shortcut: ['/images/favicon.png'],
