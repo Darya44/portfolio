@@ -6,10 +6,6 @@ export default function WorkPage() {
     <div className="space-y-8">
       <div className="space-y-3">
         <h1 className="text-4xl font-bold">Все кейсы</h1>
-        <p className="max-w-2xl text-white/75">
-          Каталог проектов с типизированной моделью данных, который легко масштабируется под реальные
-          кейсы.
-        </p>
       </div>
       <div className="grid gap-6 md:grid-cols-2">
         {sortedProjects.map((project) => (
