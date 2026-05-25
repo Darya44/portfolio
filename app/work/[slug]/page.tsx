@@ -304,10 +304,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       ],
       media: [
         project.coverImage,
-        '/Tenders/%D0%BB%D0%B5%D0%BC%D0%B0%D0%BD%D0%B0%20%D0%B1%D0%BB%D0%BE%D0%BA.png',
-        '/Tenders/%D0%91%D0%BB%D0%BE%D0%BA%20%D0%BB%D0%B5%D0%BC%D0%B0%D0%BD%D0%B0%202.jpg',
-        '/Tenders/%D0%91%D0%BB%D0%BE%D0%BA%20%D0%BB%D0%B5%D0%BC%D0%B0%D0%BD%D0%B0%203.png',
-        '/Tenders/4%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%BB%D0%B5%D0%BC%D0%B0%D0%BD%D0%B0.png'
+        '/Tenders/lemana-block.png',
+        '/Tenders/block-lemana-2.jpg',
+        '/Tenders/block-lemana-2.png',
+        '/Tenders/4-block-lemana.png'
       ]
     },
     {
@@ -317,11 +317,11 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         'Перед съемкой был нарисован скетч будущего баннера с роботом в ванне, который использует фильтр для воды, на его основе и были сделаны будущие кадры для КВ.'
       ],
       media: [
-        '/Tenders/%D0%91%D0%B0%D1%80%D1%8C%D0%B5%D1%80%201%20%D0%B1%D0%BB%D0%BE%D0%BA.png',
-        '/Tenders/2%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%B1%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D0%B0.png',
-        '/Tenders/3%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%B1%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D0%B0.png',
-        '/Tenders/5%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%B1%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D0%B0.png',
-        '/Tenders/960x720_%D0%90%D0%BD%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80-original.mp4'
+        '/Tenders/barier_1-block.png',
+        '/Tenders/2-block-barier.png',
+        '/Tenders/3-block-barier.png',
+        '/Tenders/5-block-barier.png',
+        '/Tenders/960x720-original.mp4'
       ]
     },
     {
@@ -331,10 +331,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         'Чтобы ускорить работу я пошла в нейросети для генерации нужных ракурсов курьеров, необходимо было учесть определенную форму, фирменный рюкзак и сами здания должны были быть похожими на здания столицы.'
       ],
       media: [
-        '/Tenders/1%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%BA%D1%83%D0%BF%D0%B5%D1%80.png',
-        '/Tenders/2%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%BA%D1%83%D0%BF%D0%B5%D1%80.png',
-        '/Tenders/3%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%BA%D1%83%D0%BF%D0%B5%D1%80.png',
-        '/Tenders/%D0%9E%D0%9E%D0%9D.png',
+        '/Tenders/1-block-kuper.png',
+        '/Tenders/2-block-kuper.png',
+        '/Tenders/3-block-kuper.png',
+        '/Tenders/OON.png',
         '/Tenders/KUPER_KV_FHD_v01-original.mp4'
       ]
     }
