@@ -215,7 +215,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           <img src="/notion/kv-winline/1920_1080_(1).png" alt="Winline KV collection image 2" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
         </div>
 
-        <img src="/notion/kv-winline/1920_1080_5__1_.webp" alt="Winline KV collection full width image" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
+        <img src="/notion/kv-winline/1920_1080_5__1.webp" alt="Winline KV collection full width image" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <img src="/notion/kv-winline/prognozy.png" alt="Winline KV collection image 3" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />

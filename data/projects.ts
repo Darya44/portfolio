@@ -38,7 +38,7 @@ export const projects = [
   tags: ["KV System", "Campaign", "Brand"],
 
   shortDescription: "Разработка key visual для бренда Winline.",
-  coverImage: "/notion/kv-winline/1920_1080_5__1_.webp",
+  coverImage: "/notion/kv-winline/1920_1080_5__1.webp",
 
   sections: [
     {
@@ -53,7 +53,7 @@ export const projects = [
       title: "Проработка сцены",
       images: [
         "/notion/kv-winline/1920_1080_(1).png",
-        "/notion/kv-winline/1920_1080_5__1_.webp"
+        "/notion/kv-winline/1920_1080_5__1.webp"
       ]
     },
     {
