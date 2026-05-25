@@ -38,7 +38,7 @@ export const projects = [
   tags: ["KV System", "Campaign", "Brand"],
 
   shortDescription: "Разработка key visual для бренда Winline.",
-  coverImage: "/notion/kv-winline/1920_1080_5_(1).png",
+  coverImage: "/notion/kv-winline/1920_1080_5__1_.webp",
 
   sections: [
     {
@@ -53,7 +53,7 @@ export const projects = [
       title: "Проработка сцены",
       images: [
         "/notion/kv-winline/1920_1080_(1).png",
-        "/notion/kv-winline/1920_1080_5_(1).png"
+        "/notion/kv-winline/1920_1080_5__1_.webp"
       ]
     },
     {
@@ -84,7 +84,7 @@ export const projects = [
     tags: ['Concept design', 'Retouch', 'Visual System'],
     shortDescription: 'Создание концепции игровых лутбоксов для приложения Winline.',
     coverImage:
-      '/notion/Lootboxes/lootboxes-cover.png',
+      '/notion/Lootboxes/lootboxes-cover.webp',
     sections: [
       {
         title: 'Gallery',
@@ -112,7 +112,7 @@ export const projects = [
     tags: ['Branding', 'Wallpapers', 'Visual Design'],
     shortDescription: 'Две серии iOS-заставок для Winline: новогодняя и брендовая с командами и амбассадорами',
     coverImage:
-      '/wallpapers/1-%D0%B1%D0%BB%D0%BE%D0%BA.png',
+      '/wallpapers/1-%D0%B1%D0%BB%D0%BE%D0%BA.webp',
     sections: [
       {
         title: 'Gallery',
@@ -206,7 +206,7 @@ export const projects = [
 
 Чтобы ускорить работу я пошла в нейросети для генерации нужных ракурсов курьеров, необходимо было учесть определенную форму, фирменный рюкзак и сами здания должны были быть похожими на здания столицы.`,
     coverImage:
-      '/Tenders/2%20%D0%B1%D0%BB%D0%BE%D0%BA.png',
+      '/Tenders/2-%D0%B1%D0%BB%D0%BE%D0%BA.webp',
     sections: [
       {
         title: 'Gallery',

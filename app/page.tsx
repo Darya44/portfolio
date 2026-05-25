@@ -12,7 +12,7 @@ export default function HomePage() {
         <div className="space-y-8 md:space-y-20">
           <div className="group w-full max-w-[760px] overflow-hidden rounded-[18px]">
             <img
-              src="/images/ава-нью.png"
+              src="/images/ава-нью.webp"
               alt="Дарья Захарьящева"
               className="aspect-[5/4] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
             />

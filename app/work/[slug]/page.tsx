@@ -215,7 +215,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           <img src="/notion/kv-winline/1920_1080_(1).png" alt="Winline KV collection image 2" className="w-full h-auto rounded-2xl" loading="lazy" />
         </div>
 
-        <img src="/notion/kv-winline/1920_1080_5_(1).png" alt="Winline KV collection full width image" className="w-full h-auto rounded-2xl" loading="lazy" />
+        <img src="/notion/kv-winline/1920_1080_5__1_.webp" alt="Winline KV collection full width image" className="w-full h-auto rounded-2xl" loading="lazy" />
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <img src="/notion/kv-winline/prognozy.png" alt="Winline KV collection image 3" className="w-full h-auto rounded-2xl" loading="lazy" />
@@ -227,7 +227,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
   const renderLootboxesRight = () => (
     <div className="space-y-4">
-      <img src="/notion/Lootboxes/lootboxes-cover.png" alt="Lootboxes Winline cover" className="w-full h-auto rounded-2xl" loading="lazy" />
+      <img src="/notion/Lootboxes/lootboxes-cover.webp" alt="Lootboxes Winline cover" className="w-full h-auto rounded-2xl" loading="lazy" />
       <img src="/notion/Lootboxes/Nachaloo1.png" alt="Lootboxes Winline start of work" className="w-full h-auto rounded-2xl" loading="lazy" />
       <img src="/notion/Lootboxes/Nachaloo2.png" alt="Lootboxes Winline first drafts" className="w-full h-auto rounded-2xl" loading="lazy" />
       <img src="/notion/Lootboxes/Nachalo3.png" alt="Lootboxes Winline color stretch" className="w-full h-auto rounded-2xl" loading="lazy" />
