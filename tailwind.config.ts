@@ -11,6 +11,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
         display: ["var(--font-inter)", "sans-serif"],
+        condensed: ["var(--font-druk-condensed)", '"Druk Condensed"', '"Druk Text Condensed"', '"Arial Narrow"', "Impact", "sans-serif"],
       },
     },
   },

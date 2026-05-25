@@ -16,3 +16,26 @@
     font-family: var(--font-inter), sans-serif;
   }
 }
+
+@layer utilities {
+  .brand-marquee {
+    animation: brand-marquee 24s linear infinite;
+  }
+
+  .brand-name {
+    display: inline-block;
+    font-style: oblique 14deg;
+    transform: skewX(-10deg);
+    transform-origin: center;
+  }
+
+  @keyframes brand-marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+}

@@ -2,10 +2,18 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
   variable: '--font-inter',
+});
+
+const drukCondensed = localFont({
+  src: './fonts/drukcondensedcyrsuper.otf',
+  variable: '--font-druk-condensed',
+  weight: '700',
+  style: 'italic',
 });
 
 const siteTitle = 'Захарьящева Дарья';
@@ -39,7 +47,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className={`${inter.variable} min-h-screen overflow-x-hidden bg-black text-white font-sans`}>
+      <body className={`${inter.variable} ${drukCondensed.variable} min-h-screen overflow-x-hidden bg-black text-white font-sans`}>
         <header className="border-b border-white/10">
           <div className="mx-auto grid max-w-[1600px] grid-cols-[auto_1fr] items-center px-3 py-3 text-[13px] sm:grid-cols-4 sm:px-6 sm:py-6 sm:text-sm">
             <Link href="/" className="justify-self-start leading-[1.05] hover:text-white/80">

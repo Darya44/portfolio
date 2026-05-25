@@ -4,6 +4,8 @@ import { ProjectCard } from "@/components/project-card";
 import { featuredProjects } from "@/data/projects";
 import { motion } from "framer-motion";
 
+const brandNames = ["СБЕР", "WINLINE", "VK", "ЯНДЕКС", "БАЛТИКА", "КУПЕР", "САМОЛЕТ", "БАРЬЕР"];
+
 export default function HomePage() {
   return (
     <div className="space-y-16">
@@ -25,9 +27,27 @@ export default function HomePage() {
               Привет! Я Дарья Захарьящева
             </h1>
             <p className="font-display text-[2.25rem] leading-[1.12] text-white/80 sm:text-5xl lg:text-6xl">
-              Дизайнер визуальных концепций и key visual с 7-летним опытом, работаю с AI. Среди проектов — Сбер, ВК, Яндекс, Winline, Самолет, Балтика
+              Дизайнер визуальных концепций и key visual с 7-летним опытом, работаю с AI. Компании с которыми работала:
             </p>
           </div>
+        </div>
+      </section>
+
+      <section aria-label="Бренды" className="relative -top-[30px] left-1/2 right-1/2 -mt-[90px] w-screen -ml-[50vw] -mr-[50vw] overflow-hidden bg-transparent py-2 md:-top-[30px] md:-mt-[98px] md:py-4">
+        <div className="brand-marquee flex w-max items-center">
+          {[...brandNames, ...brandNames].map((brand, index) => (
+            <span key={`${brand}-${index}`} className="flex items-center">
+              <span className="brand-name mx-5 whitespace-nowrap font-condensed text-[clamp(2.75rem,8vw,8rem)] font-normal uppercase leading-none tracking-normal text-white md:mx-8">
+                {brand}
+              </span>
+              <img
+                src="/Star%205.svg"
+                alt=""
+                aria-hidden="true"
+                className="h-4 w-4 shrink-0 opacity-40 md:h-6 md:w-6"
+              />
+            </span>
+          ))}
         </div>
       </section>
 
