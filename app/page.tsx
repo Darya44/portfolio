@@ -37,14 +37,14 @@ export default function HomePage() {
         <div className="brand-marquee flex w-max items-center">
           {[...brandNames, ...brandNames].map((brand, index) => (
             <span key={`${brand}-${index}`} className="flex items-center">
-              <span className="brand-name mx-5 whitespace-nowrap font-condensed text-[clamp(2.75rem,8vw,8rem)] font-bold uppercase leading-none tracking-[3px] text-white md:mx-8">
+              <span className="brand-name mx-5 whitespace-nowrap font-condensed text-[clamp(4rem,18vw,8rem)] font-bold uppercase leading-none tracking-[3px] text-white md:mx-8 md:text-[clamp(2.75rem,8vw,8rem)]">
                 {brand}
               </span>
               <img
                 src="/Star%205.svg"
                 alt=""
                 aria-hidden="true"
-                className="h-4 w-4 shrink-0 opacity-40 md:h-6 md:w-6"
+                className="h-6 w-6 shrink-0 opacity-40"
               />
             </span>
           ))}

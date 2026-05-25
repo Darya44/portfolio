@@ -24,6 +24,8 @@
 
   .brand-name {
     display: inline-block;
+    font-family: var(--font-druk-condensed), "Druk XCondensed Cyr Super", "Arial Narrow", Impact, sans-serif;
+    font-style: italic;
   }
 
   @keyframes brand-marquee {
