@@ -14,6 +14,8 @@ export default function HomePage() {
             <img
               src="/images/ава-нью.webp"
               alt="Дарья Захарьящева"
+              fetchPriority="high"
+              decoding="async"
               className="aspect-[5/4] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
             />
           </div>

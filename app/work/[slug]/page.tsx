@@ -63,7 +63,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <source src={src} type="video/mp4" />
       </video>
     ) : (
-      <img key={key} src={src} alt={alt} className="w-full h-auto rounded-2xl" loading="lazy" />
+      <img key={key} src={src} alt={alt} className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
     );
 
   const caseFooter = (
@@ -200,10 +200,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const renderWinlineRight = () => (
     <div className="space-y-16">
       <section className="space-y-6">
-        <img src="/notion/kv-winline/nachalo.png" alt="Winline process start references" className="w-full h-auto rounded-2xl" loading="lazy" />
-        <img src="/notion/kv-winline/juxtapose-gif.gif" alt="Winline animation process" className="w-full h-auto rounded-2xl" loading="lazy" />
+        <img src="/notion/kv-winline/nachalo.png" alt="Winline process start references" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
+        <img src="/notion/kv-winline/juxtapose-gif.gif" alt="Winline animation process" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
         <div className="space-y-4">
-          <img src="/notion/kv-winline/2.png" alt="Winline process frame" className="w-full h-auto rounded-2xl" loading="lazy" />
+          <img src="/notion/kv-winline/2.png" alt="Winline process frame" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
         </div>
       </section>
 
@@ -211,15 +211,15 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <h2 className="text-xl font-semibold text-white">Моя коллекция KV Winline</h2>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <img src="/notion/kv-winline/16_9_(1).jpg" alt="Winline KV collection image 1" className="w-full h-auto rounded-2xl" loading="lazy" />
-          <img src="/notion/kv-winline/1920_1080_(1).png" alt="Winline KV collection image 2" className="w-full h-auto rounded-2xl" loading="lazy" />
+          <img src="/notion/kv-winline/16_9_(1).jpg" alt="Winline KV collection image 1" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
+          <img src="/notion/kv-winline/1920_1080_(1).png" alt="Winline KV collection image 2" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
         </div>
 
-        <img src="/notion/kv-winline/1920_1080_5__1_.webp" alt="Winline KV collection full width image" className="w-full h-auto rounded-2xl" loading="lazy" />
+        <img src="/notion/kv-winline/1920_1080_5__1_.webp" alt="Winline KV collection full width image" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <img src="/notion/kv-winline/prognozy.png" alt="Winline KV collection image 3" className="w-full h-auto rounded-2xl" loading="lazy" />
-          <img src="/notion/kv-winline/KV_10.png" alt="Winline KV collection image 4" className="w-full h-auto rounded-2xl" loading="lazy" />
+          <img src="/notion/kv-winline/prognozy.png" alt="Winline KV collection image 3" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
+          <img src="/notion/kv-winline/KV_10.png" alt="Winline KV collection image 4" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
         </div>
       </section>
     </div>
@@ -227,10 +227,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
   const renderLootboxesRight = () => (
     <div className="space-y-4">
-      <img src="/notion/Lootboxes/lootboxes-cover.webp" alt="Lootboxes Winline cover" className="w-full h-auto rounded-2xl" loading="lazy" />
-      <img src="/notion/Lootboxes/Nachaloo1.png" alt="Lootboxes Winline start of work" className="w-full h-auto rounded-2xl" loading="lazy" />
-      <img src="/notion/Lootboxes/Nachaloo2.png" alt="Lootboxes Winline first drafts" className="w-full h-auto rounded-2xl" loading="lazy" />
-      <img src="/notion/Lootboxes/Nachalo3.png" alt="Lootboxes Winline color stretch" className="w-full h-auto rounded-2xl" loading="lazy" />
+      <img src="/notion/Lootboxes/lootboxes-cover.webp" alt="Lootboxes Winline cover" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
+      <img src="/notion/Lootboxes/Nachaloo1.png" alt="Lootboxes Winline start of work" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
+      <img src="/notion/Lootboxes/Nachaloo2.png" alt="Lootboxes Winline first drafts" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
+      <img src="/notion/Lootboxes/Nachalo3.png" alt="Lootboxes Winline color stretch" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
@@ -242,19 +242,19 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </video>
       </div>
 
-      <img src="/notion/Lootboxes/Vsu_lineika.png" alt="Lootboxes Winline full lineup" className="w-full h-auto rounded-2xl" loading="lazy" />
+      <img src="/notion/Lootboxes/Vsu_lineika.png" alt="Lootboxes Winline full lineup" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
 
       <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
         <source src="/notion/Lootboxes/original.mp4" type="video/mp4" />
       </video>
 
-      <img src="/notion/Lootboxes/Area_51.png" alt="Lootboxes Winline Area 51" className="w-full h-auto rounded-2xl" loading="lazy" />
+      <img src="/notion/Lootboxes/Area_51.png" alt="Lootboxes Winline Area 51" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
 
       <video className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
         <source src="/notion/Lootboxes/_OVERTIME_1024x1024-original.mp4" type="video/mp4" />
       </video>
 
-      <img src="/notion/Lootboxes/Overtime.png" alt="Lootboxes Winline Overtime" className="w-full h-auto rounded-2xl" loading="lazy" />
+      <img src="/notion/Lootboxes/Overtime.png" alt="Lootboxes Winline Overtime" className="w-full h-auto rounded-2xl" loading="lazy" decoding="async" />
     </div>
   );
 

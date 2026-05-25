@@ -11,6 +11,8 @@ export function ProjectCard({ project }: { project: Project }) {
         <img
           src={project.coverImage}
           alt={project.title}
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover group-hover:scale-[1.02] transition"
         />
       </div>
