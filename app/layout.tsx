@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 const drukCondensed = localFont({
-  src: './fonts/drukcondensedcyrsuper.otf',
+  src: './fonts/drukxcondensedcyrsuper-italic.otf',
   variable: '--font-druk-condensed',
   weight: '700',
   style: 'italic',

@@ -24,9 +24,6 @@
 
   .brand-name {
     display: inline-block;
-    font-style: oblique 14deg;
-    transform: skewX(-10deg);
-    transform-origin: center;
   }
 
   @keyframes brand-marquee {
