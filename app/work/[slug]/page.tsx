@@ -29,33 +29,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     .filter((file) => /\.(png|jpe?g|webp|gif)$/i.test(file))
     .sort((a, b) => a.localeCompare(b, 'ru', { numeric: true }))
     .map((file) => `/wallpapers/${encodeURIComponent(file)}`);
-  const sberDir = path.join(process.cwd(), 'public', 'sber');
-  const sberImages = fs.existsSync(sberDir)
-    ? fs
-        .readdirSync(sberDir)
-        .filter((file) => /\.(png|jpe?g|webp|gif|mp4|webm|mov)$/i.test(file))
-        .sort((a, b) => {
-          const getOrder = (file: string) => {
-            const blockMatch = file.match(/^(\d+)-block/i);
-            const animationMatch = file.match(/^sber\s*(\d+)\s*anim/i);
-
-            if (blockMatch) {
-              return Number(blockMatch[1]);
-            }
-
-            if (animationMatch) {
-              return 100 + Number(animationMatch[1]);
-            }
-
-            return 1000;
-          };
-
-          const orderDiff = getOrder(a) - getOrder(b);
-          return orderDiff || a.localeCompare(b, 'ru', { numeric: true });
-        })
-        .map((file) => `/sber/${encodeURIComponent(file)}`)
-    : [];
-  const isSberCase = decodedSlug === 'sber-key-visuals';
   const isWinlineCase = decodedSlug === 'kv-winline';
   const isLootboxesCase = decodedSlug === 'lootboxes-winline' || decodedSlug === 'Лутбоксы Winline';
   const isWallpapersCase = decodedSlug === 'edtech-mentor-platform';
@@ -331,10 +304,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       ],
       media: [
         project.coverImage,
-        '/Tenders/lemana-block.png',
-        '/Tenders/block-lemana-2.jpg',
-        '/Tenders/block-lemana-2.png',
-        '/Tenders/4-block-lemana.png'
+        '/Tenders/%D0%BB%D0%B5%D0%BC%D0%B0%D0%BD%D0%B0%20%D0%B1%D0%BB%D0%BE%D0%BA.png',
+        '/Tenders/%D0%91%D0%BB%D0%BE%D0%BA%20%D0%BB%D0%B5%D0%BC%D0%B0%D0%BD%D0%B0%202.jpg',
+        '/Tenders/%D0%91%D0%BB%D0%BE%D0%BA%20%D0%BB%D0%B5%D0%BC%D0%B0%D0%BD%D0%B0%203.png',
+        '/Tenders/4%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%BB%D0%B5%D0%BC%D0%B0%D0%BD%D0%B0.png'
       ]
     },
     {
@@ -344,11 +317,11 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         'Перед съемкой был нарисован скетч будущего баннера с роботом в ванне, который использует фильтр для воды, на его основе и были сделаны будущие кадры для КВ.'
       ],
       media: [
-        '/Tenders/barier_1-block.png',
-        '/Tenders/2-block-barier.png',
-        '/Tenders/3-block-barier.png',
-        '/Tenders/5-block-barier.png',
-        '/Tenders/960x720-original.mp4'
+        '/Tenders/%D0%91%D0%B0%D1%80%D1%8C%D0%B5%D1%80%201%20%D0%B1%D0%BB%D0%BE%D0%BA.png',
+        '/Tenders/2%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%B1%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D0%B0.png',
+        '/Tenders/3%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%B1%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D0%B0.png',
+        '/Tenders/5%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%B1%D0%B0%D1%80%D1%8C%D0%B5%D1%80%D0%B0.png',
+        '/Tenders/960x720_%D0%90%D0%BD%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80-original.mp4'
       ]
     },
     {
@@ -358,10 +331,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         'Чтобы ускорить работу я пошла в нейросети для генерации нужных ракурсов курьеров, необходимо было учесть определенную форму, фирменный рюкзак и сами здания должны были быть похожими на здания столицы.'
       ],
       media: [
-        '/Tenders/1-block-kuper.png',
-        '/Tenders/2-block-kuper.png',
-        '/Tenders/3-block-kuper.png',
-        '/Tenders/OON.png',
+        '/Tenders/1%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%BA%D1%83%D0%BF%D0%B5%D1%80.png',
+        '/Tenders/2%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%BA%D1%83%D0%BF%D0%B5%D1%80.png',
+        '/Tenders/3%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%BA%D1%83%D0%BF%D0%B5%D1%80.png',
+        '/Tenders/%D0%9E%D0%9E%D0%9D.png',
         '/Tenders/KUPER_KV_FHD_v01-original.mp4'
       ]
     }
@@ -392,93 +365,13 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     </div>
   );
 
-  const renderSberCase = () => {
-    const getSberFileName = (src: string) => decodeURIComponent(src.split('/').pop() ?? '');
-    const blockImages = sberImages.filter((src) => !isVideo(src));
-    const firstAnimation = sberImages.find((src) => /^sber\s*1\s*anim/i.test(getSberFileName(src)));
-    const secondAnimation = sberImages.find((src) => /^sber\s*2\s*anim/i.test(getSberFileName(src)));
-    const beforeAfterAnimation = sberImages.find((src) => /^do\s*posle/i.test(getSberFileName(src)));
-
-    const renderSberBlockWithVideo = (
-      imageSrc: string,
-      videoSrc: string,
-      index: number,
-      frameClassName: string,
-      fitClassName = 'object-cover'
-    ) => (
-      <div key={imageSrc} className="relative">
-        <img
-          src={imageSrc}
-          alt={`${project.title} ${index + 1}`}
-          className="block h-auto w-full"
-          loading={index === 0 ? 'eager' : 'lazy'}
-          decoding="async"
-        />
-        <div className={`absolute overflow-hidden rounded-[clamp(8px,1.35vw,22px)] bg-white ${frameClassName}`}>
-          <video className={`h-full w-full ${fitClassName}`} autoPlay muted loop playsInline>
-            <source src={videoSrc} />
-          </video>
-        </div>
-      </div>
-    );
-
-    const renderSberMedia = (src: string, index: number) => {
-      const fileName = getSberFileName(src);
-
-      if (/^3-block/i.test(fileName) && firstAnimation) {
-        return renderSberBlockWithVideo(src, firstAnimation, index, 'left-[14.85%] top-[17.2%] h-[63.7%] w-[70.45%]');
-      }
-
-      if (/^5-block/i.test(fileName) && secondAnimation) {
-        return renderSberBlockWithVideo(
-          src,
-          secondAnimation,
-          index,
-          'left-[17.65%] top-[20.75%] h-[66.9%] w-[64.7%]',
-          'object-fill'
-        );
-      }
-
-      if (/^9-block/i.test(fileName) && beforeAfterAnimation) {
-        return renderSberBlockWithVideo(
-          src,
-          beforeAfterAnimation,
-          index,
-          'left-[12.75%] top-[26.7%] h-[65.9%] w-[71.45%]',
-          'scale-[1.012] object-cover'
-        );
-      }
-
-      return (
-        <img
-          key={src}
-          src={src}
-          alt={`${project.title} ${index + 1}`}
-          className="block h-auto w-full"
-          loading={index === 0 ? 'eager' : 'lazy'}
-          decoding="async"
-        />
-      );
-    };
-
-    return (
-      <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#101010] md:left-auto md:mx-auto md:w-full md:max-w-[1600px] md:translate-x-0">
-        <section className="space-y-0">
-          {blockImages.map((src, index) => renderSberMedia(src, index))}
-        </section>
-      </div>
-    );
-  };
-
   return (
     <article className="space-y-10">
       <Link href="/work" className="inline-flex text-sm text-white/70 hover:text-white">
         ← Назад к кейсам
       </Link>
 
-      {isSberCase ? (
-        renderSberCase()
-      ) : isTendersCase ? (
+      {isTendersCase ? (
         renderTendersCase()
       ) : (
         <CaseLayout
