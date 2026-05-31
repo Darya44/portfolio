@@ -444,8 +444,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           src,
           beforeAfterAnimation,
           index,
-          'left-[12.8%] top-[29%] h-[71.6%] w-[71.5%]',
-          'object-cover'
+          'left-[12.75%] top-[26.7%] h-[65.9%] w-[71.45%]',
+          'scale-[1.012] object-cover'
         );
       }
 
