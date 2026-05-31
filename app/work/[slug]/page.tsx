@@ -29,6 +29,33 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     .filter((file) => /\.(png|jpe?g|webp|gif)$/i.test(file))
     .sort((a, b) => a.localeCompare(b, 'ru', { numeric: true }))
     .map((file) => `/wallpapers/${encodeURIComponent(file)}`);
+  const sberDir = path.join(process.cwd(), 'public', 'sber');
+  const sberImages = fs.existsSync(sberDir)
+    ? fs
+        .readdirSync(sberDir)
+        .filter((file) => /\.(png|jpe?g|webp|gif|mp4|webm|mov)$/i.test(file))
+        .sort((a, b) => {
+          const getOrder = (file: string) => {
+            const blockMatch = file.match(/^(\d+)-block/i);
+            const animationMatch = file.match(/^sber\s*(\d+)\s*anim/i);
+
+            if (blockMatch) {
+              return Number(blockMatch[1]);
+            }
+
+            if (animationMatch) {
+              return 100 + Number(animationMatch[1]);
+            }
+
+            return 1000;
+          };
+
+          const orderDiff = getOrder(a) - getOrder(b);
+          return orderDiff || a.localeCompare(b, 'ru', { numeric: true });
+        })
+        .map((file) => `/sber/${encodeURIComponent(file)}`)
+    : [];
+  const isSberCase = decodedSlug === 'sber-key-visuals';
   const isWinlineCase = decodedSlug === 'kv-winline';
   const isLootboxesCase = decodedSlug === 'lootboxes-winline' || decodedSlug === 'Лутбоксы Winline';
   const isWallpapersCase = decodedSlug === 'edtech-mentor-platform';
@@ -365,13 +392,78 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     </div>
   );
 
+  const renderSberCase = () => {
+    const getSberFileName = (src: string) => decodeURIComponent(src.split('/').pop() ?? '');
+    const hasSecondAnimationFrame = sberImages.some((src) => /^4-block/i.test(getSberFileName(src)));
+    const blockImages = sberImages.filter((src) => {
+      const fileName = getSberFileName(src);
+      return !isVideo(src) && !(hasSecondAnimationFrame && /^5-block/i.test(fileName));
+    });
+    const firstAnimation = sberImages.find((src) => /^sber\s*1\s*anim/i.test(getSberFileName(src)));
+    const secondAnimation = sberImages.find((src) => /^sber\s*2\s*anim/i.test(getSberFileName(src)));
+
+    const renderSberBlockWithVideo = (imageSrc: string, videoSrc: string, index: number) => (
+      <div key={imageSrc} className="relative">
+        <img
+          src={imageSrc}
+          alt={`${project.title} ${index + 1}`}
+          className="block h-auto w-full"
+          loading={index === 0 ? 'eager' : 'lazy'}
+          decoding="async"
+        />
+        <video
+          className="absolute left-[14.9%] top-[20.75%] h-[66.9%] w-[70.25%] rounded-[22px] bg-white object-contain"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src={videoSrc} />
+        </video>
+      </div>
+    );
+
+    const renderSberMedia = (src: string, index: number) => {
+      const fileName = getSberFileName(src);
+
+      if (/^3-block/i.test(fileName) && firstAnimation) {
+        return renderSberBlockWithVideo(src, firstAnimation, index);
+      }
+
+      if (/^4-block/i.test(fileName) && secondAnimation) {
+        return renderSberBlockWithVideo(src, secondAnimation, index);
+      }
+
+      return (
+        <img
+          key={src}
+          src={src}
+          alt={`${project.title} ${index + 1}`}
+          className="block h-auto w-full"
+          loading={index === 0 ? 'eager' : 'lazy'}
+          decoding="async"
+        />
+      );
+    };
+
+    return (
+      <div className="mx-auto w-full max-w-[1600px] bg-[#101010]">
+        <section className="space-y-0">
+          {blockImages.map((src, index) => renderSberMedia(src, index))}
+        </section>
+      </div>
+    );
+  };
+
   return (
     <article className="space-y-10">
       <Link href="/work" className="inline-flex text-sm text-white/70 hover:text-white">
         ← Назад к кейсам
       </Link>
 
-      {isTendersCase ? (
+      {isSberCase ? (
+        renderSberCase()
+      ) : isTendersCase ? (
         renderTendersCase()
       ) : (
         <CaseLayout
