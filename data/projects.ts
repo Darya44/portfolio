@@ -12,7 +12,7 @@ export type Project = {
   slug: string;
   title: string;
   client: string;
-  year: number;
+  year: number | string;
   role: string[];
   tags: string[];
   shortDescription: string;
@@ -29,6 +29,24 @@ export type Project = {
 };
 
 export const projects = [
+{
+  slug: "sber-key-visuals",
+  title: "KV Сбер Бизнес",
+  client: "Сбер Бизнес",
+  year: "2025-2026",
+  role: ["Key Visual", "AI pipeline", "Art direction"],
+  tags: ["KV System", "Campaign", "Brand"],
+  shortDescription: "Разработка key visuals для рекламных кампаний Сбер Бизнеса и Сбер Про.",
+  coverImage: "/sber/1-block.png",
+  sections: [],
+  problem: "Подготовить визуальную концепцию, которую можно масштабировать под разные digital-форматы бренда.",
+  approach: "Собран AI-пайплайн для генерации сцены, поиска композиции и последующей ретуши key visual.",
+  outcome: "Получился выразительный визуальный язык для бренд-коммуникации Сбера.",
+  tools: ["Figma", "Photoshop", "AI"],
+  links: [],
+  featured: true,
+  order: 0
+},
 {
   slug: "kv-winline",
   title: "KV Winline",
