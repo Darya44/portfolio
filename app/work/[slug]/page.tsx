@@ -397,6 +397,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     const blockImages = sberImages.filter((src) => !isVideo(src));
     const firstAnimation = sberImages.find((src) => /^sber\s*1\s*anim/i.test(getSberFileName(src)));
     const secondAnimation = sberImages.find((src) => /^sber\s*2\s*anim/i.test(getSberFileName(src)));
+    const beforeAfterAnimation = sberImages.find((src) => /^do\s*posle/i.test(getSberFileName(src)));
 
     const renderSberBlockWithVideo = (
       imageSrc: string,
@@ -439,6 +440,16 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           index,
           'left-[17.65%] top-[20.75%] h-[66.9%] w-[64.7%]',
           'object-fill'
+        );
+      }
+
+      if (/^9-block/i.test(fileName) && beforeAfterAnimation) {
+        return renderSberBlockWithVideo(
+          src,
+          beforeAfterAnimation,
+          index,
+          'left-[12.8%] top-[29%] h-[71.6%] w-[71.5%]',
+          'object-cover'
         );
       }
 
