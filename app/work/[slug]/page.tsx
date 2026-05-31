@@ -394,15 +394,16 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
   const renderSberCase = () => {
     const getSberFileName = (src: string) => decodeURIComponent(src.split('/').pop() ?? '');
-    const hasSecondAnimationFrame = sberImages.some((src) => /^4-block/i.test(getSberFileName(src)));
-    const blockImages = sberImages.filter((src) => {
-      const fileName = getSberFileName(src);
-      return !isVideo(src) && !(hasSecondAnimationFrame && /^5-block/i.test(fileName));
-    });
+    const blockImages = sberImages.filter((src) => !isVideo(src));
     const firstAnimation = sberImages.find((src) => /^sber\s*1\s*anim/i.test(getSberFileName(src)));
     const secondAnimation = sberImages.find((src) => /^sber\s*2\s*anim/i.test(getSberFileName(src)));
 
-    const renderSberBlockWithVideo = (imageSrc: string, videoSrc: string, index: number) => (
+    const renderSberBlockWithVideo = (
+      imageSrc: string,
+      videoSrc: string,
+      index: number,
+      frameClassName: string
+    ) => (
       <div key={imageSrc} className="relative">
         <img
           src={imageSrc}
@@ -412,7 +413,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           decoding="async"
         />
         <video
-          className="absolute left-[14.9%] top-[20.75%] h-[66.9%] w-[70.25%] rounded-[22px] bg-white object-contain"
+          className={`absolute rounded-[22px] bg-white object-cover ${frameClassName}`}
           autoPlay
           muted
           loop
@@ -427,11 +428,11 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       const fileName = getSberFileName(src);
 
       if (/^3-block/i.test(fileName) && firstAnimation) {
-        return renderSberBlockWithVideo(src, firstAnimation, index);
+        return renderSberBlockWithVideo(src, firstAnimation, index, 'left-[14.9%] top-[17.45%] h-[65.1%] w-[70.25%]');
       }
 
-      if (/^4-block/i.test(fileName) && secondAnimation) {
-        return renderSberBlockWithVideo(src, secondAnimation, index);
+      if (/^5-block/i.test(fileName) && secondAnimation) {
+        return renderSberBlockWithVideo(src, secondAnimation, index, 'left-[17.65%] top-[20.75%] h-[66.9%] w-[64.7%]');
       }
 
       return (
