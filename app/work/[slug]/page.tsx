@@ -414,15 +414,11 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           loading={index === 0 ? 'eager' : 'lazy'}
           decoding="async"
         />
-        <video
-          className={`absolute rounded-[22px] bg-white ${fitClassName} ${frameClassName}`}
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src={videoSrc} />
-        </video>
+        <div className={`absolute overflow-hidden rounded-[22px] bg-white ${frameClassName}`}>
+          <video className={`h-full w-full ${fitClassName}`} autoPlay muted loop playsInline>
+            <source src={videoSrc} />
+          </video>
+        </div>
       </div>
     );
 
@@ -430,7 +426,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       const fileName = getSberFileName(src);
 
       if (/^3-block/i.test(fileName) && firstAnimation) {
-        return renderSberBlockWithVideo(src, firstAnimation, index, 'left-[14.9%] top-[17.45%] h-[65.1%] w-[70.25%]');
+        return renderSberBlockWithVideo(src, firstAnimation, index, 'left-[14.85%] top-[17.2%] h-[63.7%] w-[70.45%]');
       }
 
       if (/^5-block/i.test(fileName) && secondAnimation) {
