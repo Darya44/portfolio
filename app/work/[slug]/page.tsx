@@ -402,7 +402,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       imageSrc: string,
       videoSrc: string,
       index: number,
-      frameClassName: string
+      frameClassName: string,
+      fitClassName = 'object-cover'
     ) => (
       <div key={imageSrc} className="relative">
         <img
@@ -413,7 +414,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           decoding="async"
         />
         <video
-          className={`absolute rounded-[22px] bg-white object-cover ${frameClassName}`}
+          className={`absolute rounded-[22px] bg-white ${fitClassName} ${frameClassName}`}
           autoPlay
           muted
           loop
@@ -432,7 +433,13 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       }
 
       if (/^5-block/i.test(fileName) && secondAnimation) {
-        return renderSberBlockWithVideo(src, secondAnimation, index, 'left-[17.65%] top-[20.75%] h-[66.9%] w-[64.7%]');
+        return renderSberBlockWithVideo(
+          src,
+          secondAnimation,
+          index,
+          'left-[17.65%] top-[20.75%] h-[66.9%] w-[64.7%]',
+          'object-fill'
+        );
       }
 
       return (
