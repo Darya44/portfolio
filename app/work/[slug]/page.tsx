@@ -414,7 +414,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           loading={index === 0 ? 'eager' : 'lazy'}
           decoding="async"
         />
-        <div className={`absolute overflow-hidden rounded-[22px] bg-white ${frameClassName}`}>
+        <div className={`absolute overflow-hidden rounded-[clamp(8px,1.35vw,22px)] bg-white ${frameClassName}`}>
           <video className={`h-full w-full ${fitClassName}`} autoPlay muted loop playsInline>
             <source src={videoSrc} />
           </video>
@@ -462,7 +462,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     };
 
     return (
-      <div className="mx-auto w-full max-w-[1600px] bg-[#101010]">
+      <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#101010] md:left-auto md:mx-auto md:w-full md:max-w-[1600px] md:translate-x-0">
         <section className="space-y-0">
           {blockImages.map((src, index) => renderSberMedia(src, index))}
         </section>
