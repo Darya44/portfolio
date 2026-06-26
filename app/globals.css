@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
   body {
     font-family: var(--font-inter), sans-serif;
   }
