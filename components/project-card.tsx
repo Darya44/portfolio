@@ -7,6 +7,7 @@ import type { Project } from "@/data/projects";
 
 const SBER_SLUG = "sber-key-visuals";
 const NDA_CYAN = "#55eaff";
+const NDA_ACCESS_KEY = "sber-case-access";
 
 type ProjectCardProps = {
   project: Project;
@@ -23,6 +24,10 @@ export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) 
   const href = `/work/${project.slug}`;
 
   const openCase = () => {
+    if (isNdaCase) {
+      window.sessionStorage.setItem(NDA_ACCESS_KEY, "true");
+    }
+
     router.push(href);
   };
 

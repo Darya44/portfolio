@@ -3,6 +3,7 @@ import path from 'node:path';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { CaseLayout } from '@/components/case-layout';
+import { NdaCaseGate } from '@/components/nda-case-gate';
 import { getProjectBySlug, sortedProjects } from '@/data/projects';
 
 type ProjectPageProps = {
@@ -493,7 +494,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </Link>
 
       {isSberCase ? (
-        renderSberCase()
+        <NdaCaseGate>{renderSberCase()}</NdaCaseGate>
       ) : isTendersCase ? (
         renderTendersCase()
       ) : (
