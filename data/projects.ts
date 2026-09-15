@@ -37,7 +37,7 @@ export const projects = [
   role: ["Key Visual", "AI pipeline", "Art direction"],
   tags: ["KV System", "Campaign", "Brand"],
   shortDescription: "Разработка key visuals для рекламных кампаний Сбер Бизнеса и Сбер Про.",
-  coverImage: "/sber/1-block.png",
+  coverImage: "/sber/1-block.png?v=1789317574",
   sections: [],
   problem: "Подготовить визуальную концепцию, которую можно масштабировать под разные digital-форматы бренда.",
   approach: "Собран AI-пайплайн для генерации сцены, поиска композиции и последующей ретуши key visual.",

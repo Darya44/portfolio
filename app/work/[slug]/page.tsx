@@ -30,14 +30,21 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     .sort((a, b) => a.localeCompare(b, 'ru', { numeric: true }))
     .map((file) => `/wallpapers/${encodeURIComponent(file)}`);
   const sberDir = path.join(process.cwd(), 'public', 'sber');
+  const sberFiles = fs.existsSync(sberDir) ? fs.readdirSync(sberDir) : [];
+  const hasSberFirstBlockReplacement = sberFiles.some((file) => /^12\s*block/i.test(file));
   const sberImages = fs.existsSync(sberDir)
-    ? fs
-        .readdirSync(sberDir)
+    ? sberFiles
         .filter((file) => /\.(png|jpe?g|webp|gif|mp4|webm|mov)$/i.test(file))
+        .filter((file) => !(hasSberFirstBlockReplacement && /^1-block/i.test(file)))
         .sort((a, b) => {
           const getOrder = (file: string) => {
             const blockMatch = file.match(/^(\d+)-block/i);
+            const firstBlockReplacementMatch = file.match(/^12\s*block/i);
             const animationMatch = file.match(/^sber\s*(\d+)\s*anim/i);
+
+            if (firstBlockReplacementMatch) {
+              return 1;
+            }
 
             if (blockMatch) {
               return Number(blockMatch[1]);
@@ -53,7 +60,16 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           const orderDiff = getOrder(a) - getOrder(b);
           return orderDiff || a.localeCompare(b, 'ru', { numeric: true });
         })
-        .map((file) => `/sber/${encodeURIComponent(file)}`)
+        .map((file) => {
+          const imagePath = `/sber/${encodeURIComponent(file)}`;
+
+          if (/^4-block/i.test(file) || /^12\s*block/i.test(file)) {
+            const version = fs.statSync(path.join(sberDir, file)).mtimeMs;
+            return `${imagePath}?v=${Math.round(version)}`;
+          }
+
+          return imagePath;
+        })
     : [];
   const isSberCase = decodedSlug === 'sber-key-visuals';
   const isWinlineCase = decodedSlug === 'kv-winline';
@@ -472,7 +488,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <article className="space-y-10">
-      <Link href="/work" className="inline-flex text-sm text-white/70 hover:text-white">
+      <Link href="/" className="inline-flex text-sm text-white/70 hover:text-white">
         ← Назад к кейсам
       </Link>
 

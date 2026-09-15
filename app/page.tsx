@@ -96,7 +96,7 @@ export default function HomePage() {
                 transition: { duration: 0.3 },
               }}
             >
-              <ProjectCard project={project} />
+              <ProjectCard project={project} withNdaGate />
             </motion.div>
           ))}
         </motion.div>
