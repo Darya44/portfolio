@@ -100,7 +100,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const footerGridClass =
     'grid grid-cols-1 gap-8 text-base leading-tight sm:text-lg md:grid-cols-[1.4fr_1fr_1fr] md:text-2xl';
   const descriptionParagraphs = (project.caseDescription ?? project.shortDescription).split(/\n\s*\n/);
-  const isVideo = (src: string) => /\.(mp4|webm|mov)$/i.test(src);
+  const isVideo = (src: string) => /\.(mp4|webm|mov)(?:\?.*)?$/i.test(src);
   const renderMedia = (src: string, alt: string, key?: string) =>
     isVideo(src) ? (
       <video key={key} className="w-full h-auto rounded-2xl" autoPlay muted loop playsInline controls>
