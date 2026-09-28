@@ -40,10 +40,6 @@ export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) 
   const checkPassword = (value: string) => {
     setPassword(value);
     setError("");
-
-    if (value.trim() === "123") {
-      openCase();
-    }
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -128,17 +124,25 @@ export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) 
   if (isNdaCase) {
     return (
       <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:bg-white/10">
-        <button
-          type="button"
+        <div
           data-project-card={project.slug}
           onClick={() => {
             setIsPasswordOpen(true);
             setError("");
           }}
-          className="group block w-full"
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              setIsPasswordOpen(true);
+              setError("");
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          className="group block w-full cursor-pointer"
         >
           {cardContent}
-        </button>
+        </div>
 
         {isPasswordOpen ? (
           <div
