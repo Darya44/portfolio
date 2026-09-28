@@ -64,7 +64,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         .map((file) => {
           const imagePath = `/sber/${encodeURIComponent(file)}`;
 
-          if (/^4-block/i.test(file) || /^12\s*block/i.test(file)) {
+          if (/^4-block/i.test(file) || /^12\s*block/i.test(file) || /\.(mp4|webm|mov)$/i.test(file)) {
             const version = fs.statSync(path.join(sberDir, file)).mtimeMs;
             return `${imagePath}?v=${Math.round(version)}`;
           }
@@ -451,8 +451,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           src,
           secondAnimation,
           index,
-          'left-[17.65%] top-[20.75%] h-[66.9%] w-[64.7%]',
-          'scale-[1.012] object-fill'
+          'left-[13.88%] top-[20.75%] h-[66.9%] w-[72.25%]',
+          'object-cover'
         );
       }
 
