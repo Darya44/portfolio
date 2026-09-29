@@ -45,6 +45,10 @@ export function NdaCaseGate({ children }: NdaCaseGateProps) {
   const handlePasswordChange = (value: string) => {
     setPassword(value);
     setError("");
+
+    if (value.trim() === NDA_PASSWORD) {
+      unlock();
+    }
   };
 
   if (!isReady) {
