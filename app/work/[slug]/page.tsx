@@ -64,7 +64,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         .map((file) => {
           const imagePath = `/sber/${encodeURIComponent(file)}`;
 
-          if (/^4-block/i.test(file) || /^12\s*block/i.test(file) || /\.(mp4|webm|mov)$/i.test(file)) {
+          if (/^[24]-block/i.test(file) || /^12\s*block/i.test(file) || /\.(mp4|webm|mov)$/i.test(file)) {
             const version = fs.statSync(path.join(sberDir, file)).mtimeMs;
             return `${imagePath}?v=${Math.round(version)}`;
           }
