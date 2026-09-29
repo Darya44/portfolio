@@ -24,7 +24,8 @@ export function NdaCaseGate({ children }: NdaCaseGateProps) {
   const unlock = () => {
     window.sessionStorage.setItem(NDA_ACCESS_KEY, "true");
     setIsUnlocked(true);
-    window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
+    setPassword("");
+    setError("");
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
