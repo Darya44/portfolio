@@ -36,6 +36,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const sberImages = fs.existsSync(sberDir)
     ? sberFiles
         .filter((file) => /\.(png|jpe?g|webp|gif|mp4|webm|mov)$/i.test(file))
+        .filter((file) => !/^thumbnail\./i.test(file))
         .filter((file) => !(hasSberFirstBlockReplacement && /^1-block/i.test(file)))
         .sort((a, b) => {
           const getOrder = (file: string) => {

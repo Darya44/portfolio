@@ -24,12 +24,16 @@ export function NdaCaseGate({ children }: NdaCaseGateProps) {
   const unlock = () => {
     window.sessionStorage.setItem(NDA_ACCESS_KEY, "true");
     setIsUnlocked(true);
+    window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    event.stopPropagation();
+    const formData = new FormData(event.currentTarget);
+    const submittedPassword = String(formData.get("password") ?? "");
 
-    if (password.trim() === NDA_PASSWORD) {
+    if (submittedPassword.trim() === NDA_PASSWORD) {
       unlock();
       return;
     }
@@ -58,6 +62,7 @@ export function NdaCaseGate({ children }: NdaCaseGateProps) {
     <div className="grid min-h-[70vh] place-items-center px-4 py-16">
       <form
         onSubmit={handleSubmit}
+        onKeyDown={(event) => event.stopPropagation()}
         className="relative w-[352px] max-w-full rounded-[22px] border bg-[#0b5e68]/45 px-[32px] pb-[20px] pt-[21px] text-center text-white shadow-[inset_0_0_42px_rgba(85,234,255,0.22),0_0_44px_rgba(85,234,255,0.28),0_22px_70px_rgba(0,0,0,0.48)] backdrop-blur-[14px] sm:px-[43px]"
         style={{ borderColor: NDA_CYAN }}
       >
@@ -86,6 +91,7 @@ export function NdaCaseGate({ children }: NdaCaseGateProps) {
 
         <label className="relative mt-[15px] block">
           <input
+            name="password"
             type="password"
             value={password}
             onChange={(event) => handlePasswordChange(event.target.value)}

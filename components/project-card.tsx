@@ -1,11 +1,11 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import type { Project } from "@/data/projects";
 
 const SBER_SLUG = "sber-key-visuals";
+const SBER_THUMBNAIL = "/sber/thumbnail.png?v=1790710151";
 const NDA_CYAN = "#55eaff";
 const NDA_ACCESS_KEY = "sber-case-access";
 
@@ -15,20 +15,27 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) {
-  const router = useRouter();
+  const passwordInputRef = useRef<HTMLInputElement>(null);
   const [isPasswordOpen, setIsPasswordOpen] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const isNdaCase = withNdaGate && project.slug === SBER_SLUG;
   const href = `/work/${project.slug}`;
+  const coverImage = isNdaCase ? SBER_THUMBNAIL : project.coverImage;
+
+  useEffect(() => {
+    if (isPasswordOpen) {
+      passwordInputRef.current?.focus();
+    }
+  }, [isPasswordOpen]);
 
   const openCase = () => {
     if (isNdaCase) {
       window.sessionStorage.setItem(NDA_ACCESS_KEY, "true");
     }
 
-    router.push(href);
+    window.location.assign(href);
   };
 
   const closePassword = () => {
@@ -44,8 +51,11 @@ export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) 
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    event.stopPropagation();
+    const formData = new FormData(event.currentTarget);
+    const submittedPassword = String(formData.get("password") ?? "");
 
-    if (password.trim() === "123") {
+    if (submittedPassword.trim() === "123") {
       openCase();
       return;
     }
@@ -89,7 +99,7 @@ export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) 
       <div className={`relative w-full overflow-hidden ${isNdaCase ? "aspect-[1549/872]" : "aspect-[16/10]"}`}>
         {ndaBadge}
         <img
-          src={project.coverImage}
+          src={coverImage}
           alt={project.title}
           loading="lazy"
           decoding="async"
@@ -124,25 +134,17 @@ export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) 
   if (isNdaCase) {
     return (
       <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:bg-white/10">
-        <div
+        <button
+          type="button"
           data-project-card={project.slug}
           onClick={() => {
             setIsPasswordOpen(true);
             setError("");
           }}
-          onKeyDown={(event) => {
-            if (event.key === "Enter" || event.key === " ") {
-              event.preventDefault();
-              setIsPasswordOpen(true);
-              setError("");
-            }
-          }}
-          role="button"
-          tabIndex={0}
           className="group block w-full cursor-pointer"
         >
           {cardContent}
-        </div>
+        </button>
 
         {isPasswordOpen ? (
           <div
@@ -155,6 +157,7 @@ export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) 
             <form
               onSubmit={handleSubmit}
               onClick={(event) => event.stopPropagation()}
+              onKeyDown={(event) => event.stopPropagation()}
               className="relative w-[352px] max-w-full rounded-[22px] border bg-[#0b5e68]/45 px-[43px] pb-[20px] pt-[21px] text-center text-white shadow-[inset_0_0_42px_rgba(85,234,255,0.22),0_0_44px_rgba(85,234,255,0.28),0_22px_70px_rgba(0,0,0,0.48)] backdrop-blur-[14px]"
               style={{ borderColor: NDA_CYAN }}
             >
@@ -187,6 +190,8 @@ export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) 
 
               <label className="relative mt-[15px] block">
                 <input
+                  ref={passwordInputRef}
+                  name="password"
                   type="password"
                   value={password}
                   onChange={(event) => checkPassword(event.target.value)}
