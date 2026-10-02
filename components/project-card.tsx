@@ -26,6 +26,7 @@ export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) 
 
   const isNdaCase = withNdaGate && project.slug === SBER_SLUG;
   const href = `/work/${project.slug}`;
+  const staticHref = `${href}.html`;
   const coverImage = isNdaCase ? SBER_THUMBNAIL : project.coverImage;
 
   useEffect(() => {
@@ -43,6 +44,11 @@ export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) 
 
     if (isNdaCase) {
       window.sessionStorage.setItem(NDA_ACCESS_KEY, "true");
+    }
+
+    if (isNdaCase) {
+      window.location.assign(staticHref);
+      return;
     }
 
     router.push(href);

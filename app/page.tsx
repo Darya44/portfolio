@@ -3,10 +3,19 @@
 import { ProjectCard } from "@/components/project-card";
 import { featuredProjects } from "@/data/projects";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const brandNames = ["СБЕР", "WINLINE", "VK", "ЯНДЕКС", "БАЛТИКА", "КУПЕР", "САМОЛЕТ", "БАРЬЕР"];
 
 export default function HomePage() {
+  useEffect(() => {
+    const { pathname, search, hash } = window.location;
+
+    if (pathname.startsWith("/work/") && !pathname.endsWith(".html")) {
+      window.location.replace(`${pathname}.html${search}${hash}`);
+    }
+  }, []);
+
   return (
     <div className="space-y-16">
       {/* HERO */}
