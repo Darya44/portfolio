@@ -46,7 +46,7 @@ export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) 
       window.sessionStorage.setItem(NDA_ACCESS_KEY, "true");
     }
 
-    if (isNdaCase) {
+    if (isNdaCase && window.location.hostname.endsWith("madebydarya.ru")) {
       window.location.assign(staticHref);
       return;
     }
