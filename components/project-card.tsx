@@ -2,11 +2,13 @@
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { Project } from "@/data/projects";
 
 const SBER_SLUG = "sber-key-visuals";
 const SBER_THUMBNAIL = "/sber/thumbnail.png?v=1790710151";
 const NDA_CYAN = "#55eaff";
+const NDA_PASSWORD = "123";
 const NDA_ACCESS_KEY = "sber-case-access";
 
 type ProjectCardProps = {
@@ -15,7 +17,9 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) {
+  const router = useRouter();
   const passwordInputRef = useRef<HTMLInputElement>(null);
+  const isOpeningRef = useRef(false);
   const [isPasswordOpen, setIsPasswordOpen] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -26,16 +30,22 @@ export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) 
 
   useEffect(() => {
     if (isPasswordOpen) {
-      passwordInputRef.current?.focus();
+      passwordInputRef.current?.focus({ preventScroll: true });
     }
   }, [isPasswordOpen]);
 
   const openCase = () => {
+    if (isOpeningRef.current) {
+      return;
+    }
+
+    isOpeningRef.current = true;
+
     if (isNdaCase) {
       window.sessionStorage.setItem(NDA_ACCESS_KEY, "true");
     }
 
-    window.location.assign(href);
+    router.push(href);
   };
 
   const closePassword = () => {
@@ -47,6 +57,10 @@ export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) 
   const checkPassword = (value: string) => {
     setPassword(value);
     setError("");
+
+    if (value.trim() === NDA_PASSWORD) {
+      openCase();
+    }
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -55,7 +69,7 @@ export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) 
     const formData = new FormData(event.currentTarget);
     const submittedPassword = String(formData.get("password") ?? "");
 
-    if (submittedPassword.trim() === "123") {
+    if (submittedPassword.trim() === NDA_PASSWORD) {
       openCase();
       return;
     }
@@ -195,7 +209,6 @@ export function ProjectCard({ project, withNdaGate = false }: ProjectCardProps) 
                   type="password"
                   value={password}
                   onChange={(event) => checkPassword(event.target.value)}
-                  autoFocus
                   aria-label="Пароль"
                   className="h-[45px] w-full rounded-[12px] border bg-[#063f4b]/[0.28] px-[18px] pr-[48px] text-left text-[22px] leading-none text-white caret-[#55eaff] outline-none transition placeholder:text-white/35 focus:bg-[#063f4b]/40"
                   style={{ borderColor: NDA_CYAN }}
